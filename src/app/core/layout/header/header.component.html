@@ -1,0 +1,16 @@
+<div class="p-5 bg-slate-900 text-gray-500 flex justify-center">
+  <nav class="max-w-screen-web w-full">
+    <div class="flex justify-between nav-panel">
+      <a href="https://github.com/barbaracalderon" target="_blank">UYEN LUU</a>
+      <div class="nav-panel flex gap-3">
+        <a
+          *ngFor="let item of items"
+          [routerLink]="item.path"
+          routerLinkActive="active"
+        >
+          {{ item.name }}
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>

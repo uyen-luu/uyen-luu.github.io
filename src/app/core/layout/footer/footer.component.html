@@ -1,0 +1,20 @@
+<footer class="p-5 bg-slate-900 text-gray-500 flex justify-center">
+  <div class="max-w-screen-web w-full">
+    <div class="flex justify-between">
+      <p>
+        &copy; <span id="currentYear"></span> {{ currentYear }} | Developed and
+        designed by {{ author }}.
+      </p>
+      <div class="nav-panel flex gap-2">
+        <a
+          *ngFor="let item of externalLinks"
+          [href]="item.uri"
+          target="_blank"
+          class="external-link a-green no-underline relative"
+        >
+          <i class="text-xl" [class]="item.icon"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
