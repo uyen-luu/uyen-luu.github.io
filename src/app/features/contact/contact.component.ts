@@ -1,12 +1,15 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
   imports: [],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactComponent {
-
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('UL | Contact');
+  }
 }
