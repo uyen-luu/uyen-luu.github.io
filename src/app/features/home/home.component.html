@@ -1,22 +1,18 @@
-<div class="flex justify-center">
-  <div class="max-w-7xl">
-    <div class="m-20 text-start">
-      <h1 class="text-7xl text-gray-300 mb-20">
-        Engineering the digital world from end to end.
-      </h1>
-      <h2 class="text-5xl mb-12 text-gray-300">
-        Uyen Luu,
-        <span
-          class="text-green-500 pr-1 border-r-2 border-green-500 animate-blink"
-          >{{ dynamicText }}</span
-        >
-      </h2>
-      <blockquote>
-        {{quote}}
-      </blockquote>
-      <button>
-        <a routerLink="/portfolio" class="a-green"> > Check Portfolio </a>
-      </button>
-    </div>
-  </div>
+<div class="m-20 text-start">
+  <h1 class="text-7xl text-gray-300 mb-20">
+    Engineering the digital world from end to end.
+  </h1>
+  <h2 class="text-5xl mb-12 text-gray-300">
+    Uyen Luu,
+    <span
+      class="text-green-500 pr-1 border-r-2 border-green-500 animate-blink"
+      >{{ dynamicText }}</span
+    >
+  </h2>
+  <blockquote class="text-gray-400">
+    {{ quote }}
+  </blockquote>
+  <button class="text-green-500">
+    <a routerLink="/portfolio" class="a-green"> > Check Portfolio </a>
+  </button>
 </div>
