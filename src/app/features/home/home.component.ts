@@ -2,10 +2,22 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CodePreviewComponent } from '@app/core/layout/code-preview/code-preview.component';
+import { AboutComponent } from '../about/about.component';
+import { ExperienceComponent } from '../experience/experience.component';
+import { SkillComponent } from '../skill/skill.component';
+import { ProjectComponent } from '../project/project.component';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, CommonModule, CodePreviewComponent],
+  imports: [
+    RouterLink,
+    CommonModule,
+    CodePreviewComponent,
+    AboutComponent,
+    ExperienceComponent,
+    SkillComponent,
+    ProjectComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
