@@ -1,12 +1,51 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-skill',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './skill.component.html',
   styleUrl: './skill.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SkillComponent {
+export class SkillComponent implements OnInit {
+  private skillsData = [
+    'HTML',
+    'CSS',
+    'Javascript',
+    'Typescript',
+    'React',
+    'Next JS',
+    'Tailwind',
+    'MongoDB',
+    'MySQL',
+    'PostgreSQL',
+    'Git',
+    'AWS',
+    'Bootstrap',
+    'Docker',
+    'Go',
+    'Figma',
+    'Firebase',
+    'MaterialUI',
+    'Nginx',
+    'Strapi',
+  ];
 
+  skills: { name: string; imagePath: string }[] = [];
+  ngOnInit(): void {
+    this.skills = this.skillsData.map((skill) => ({
+      name: skill,
+      imagePath: `assets/svg/skills/${this.toCamelCase(skill)}.svg`,
+    }));
+  }
+
+  toCamelCase = (text: string) =>
+    text
+      .toLowerCase()
+      .split(' ')
+      .map((word, index) =>
+        index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+      )
+      .join('');
 }
