@@ -36,16 +36,16 @@ export class SkillComponent implements OnInit {
   ngOnInit(): void {
     this.skills = this.skillsData.map((skill) => ({
       name: skill,
-      imagePath: `assets/svg/skills/${this.toCamelCase(skill)}.svg`,
+      imagePath: `assets/svg/skills/${this.toImageName(skill)}.svg`,
     }));
   }
 
-  toCamelCase = (text: string) =>
+  toImageName = (text: string) =>
     text
       .toLowerCase()
       .split(' ')
       .map((word, index) =>
-        index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+        index === 0 ? word : word.charAt(0) + word.slice(1)
       )
       .join('');
 }
