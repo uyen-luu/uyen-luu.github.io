@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { CodePreviewComponent } from '@app/core/layout/code-preview/code-preview.component';
 import { AboutComponent } from '../about/about.component';
 import { ExperienceComponent } from '../experience/experience.component';
 import { SkillComponent } from '../skill/skill.component';
 import { ProjectComponent } from '../project/project.component';
+import { PersonalData } from '@app/core/models';
+import { DataService } from '@app/core/services';
 
 @Component({
   selector: 'app-home',
   imports: [
-    RouterLink,
     CommonModule,
     CodePreviewComponent,
     AboutComponent,
@@ -23,27 +23,11 @@ import { ProjectComponent } from '../project/project.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
-  ngOnInit(): void {}
-  profile = {
-    name: 'Uyen Luu',
-    jobTitle: 'Full-stack Developer',
-    socials: [
-      {
-        uri: 'https://www.linkedin.com/in/uyen-luu/',
-        icon: 'fab fa-linkedin',
-      },
-      {
-        uri: 'https://github.com/uyen-luu',
-        icon: 'fab fa-github',
-      },
-      {
-        uri: 'mailto:it.luudinhuyen@gmail.com',
-        icon: 'fas fa-envelope',
-      },
-      {
-        uri: 'https://www.facebook.com/it.luudinhuyen/',
-        icon: 'fab fa-facebook',
-      },
-    ],
-  };
+  personalData!: PersonalData;
+  constructor(private _dataService: DataService) {}
+  ngOnInit(): void {
+    this._dataService
+      .getPersonalData()
+      .subscribe((res) => (this.personalData = res));
+  }  
 }

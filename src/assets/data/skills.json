@@ -1,0 +1,82 @@
+[
+    {
+        "name": "HTML",
+        "imagePath": "assets/svg/skills/html.svg"
+    },
+    {
+        "name": "CSS",
+        "imagePath": "assets/svg/skills/css.svg"
+    },
+    {
+        "name": "Javascript",
+        "imagePath": "assets/svg/skills/javascript.svg"
+    },
+    {
+        "name": "Typescript",
+        "imagePath": "assets/svg/skills/typescript.svg"
+    },
+    {
+        "name": "React",
+        "imagePath": "assets/svg/skills/react.svg"
+    },
+    {
+        "name": "Next JS",
+        "imagePath": "assets/svg/skills/nextjs.svg"
+    },
+    {
+        "name": "Tailwind",
+        "imagePath": "assets/svg/skills/tailwind.svg"
+    },
+    {
+        "name": "MongoDB",
+        "imagePath": "assets/svg/skills/mongodb.svg"
+    },
+    {
+        "name": "MySQL",
+        "imagePath": "assets/svg/skills/mySql.svg"
+    },
+    {
+        "name": "PostgreSQL",
+        "imagePath": "assets/svg/skills/postgreSql.svg"
+    },
+    {
+        "name": "Git",
+        "imagePath": "assets/svg/skills/git.svg"
+    },
+    {
+        "name": "AWS",
+        "imagePath": "assets/svg/skills/aws.svg"
+    },
+    {
+        "name": "Bootstrap",
+        "imagePath": "assets/svg/skills/bootstrap.svg"
+    },
+    {
+        "name": "Docker",
+        "imagePath": "assets/svg/skills/docker.svg"
+    },
+    {
+        "name": "Go",
+        "imagePath": "assets/svg/skills/go.svg"
+    },
+    {
+        "name": "Figma",
+        "imagePath": "assets/svg/skills/figma.svg"
+    },
+    {
+        "name": "Firebase",
+        "imagePath": "assets/svg/skills/firebase.svg"
+    },
+    {
+        "name": "MaterialUI",
+        "imagePath": "assets/svg/skills/materialui.svg"
+    },
+    {
+        "name": "Nginx",
+        "imagePath": "assets/svg/skills/nginx.svg"
+    },
+    {
+        "name": "Strapi",
+        "imagePath": "assets/svg/skills/strapi.svg"
+    }
+]

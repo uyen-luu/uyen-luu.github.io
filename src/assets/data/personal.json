@@ -1,0 +1,29 @@
+{
+  "name": "Uyen Luu",
+  "profile": "assets/images/avatar.jpg",
+  "designation": "Full-stack Developer",
+  "description": "My name is Uyen Luu. I am a professional and enthusiastic programmer in my daily life. I am a quick learner with a self-learning attitude. I love to learn and explore new technologies and am passionate about problem-solving. I love almost all the stacks of web application development and love to make the web more open to the world. My core skill is based on JavaScript and I love to do most of the things using JavaScript. I am available for any kind of job opportunity that suits my skills and interests.",
+  "email": "it.luudinhuyen@gmail.com",
+  "phone": "+84975558014",
+  "address": "Danang, Vietnam",
+  "socials": [
+    {
+      "uri": "https://www.linkedin.com/in/uyen-luu/",
+      "icon": "fab fa-linkedin"
+    },
+    {
+      "uri": "https://github.com/uyen-luu",
+      "icon": "fab fa-github"
+    },
+    {
+      "uri": "mailto:it.luudinhuyen@gmail.com",
+      "icon": "fas fa-envelope"
+    },
+    {
+      "uri": "https://www.facebook.com/it.luudinhuyen/",
+      "icon": "fab fa-facebook"
+    }
+  ],
+  "devUsername": "said7388",
+  "resume": "https://drive.google.com/file/d/1eyutpKFFhJ9X-qpQGKhUNnVRkB5Wer00/view?usp=sharing"
+}

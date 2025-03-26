@@ -1,5 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
+import { Skill } from '@app/core/models';
+import { DataService } from '@app/core/services';
 
 @Component({
   selector: 'app-skill',
@@ -9,43 +16,15 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SkillComponent implements OnInit {
-  private skillsData = [
-    'HTML',
-    'CSS',
-    'Javascript',
-    'Typescript',
-    'React',
-    'Next JS',
-    'Tailwind',
-    'MongoDB',
-    'MySQL',
-    'PostgreSQL',
-    'Git',
-    'AWS',
-    'Bootstrap',
-    'Docker',
-    'Go',
-    'Figma',
-    'Firebase',
-    'MaterialUI',
-    'Nginx',
-    'Strapi',
-  ];
-
-  skills: { name: string; imagePath: string }[] = [];
+  constructor(
+    private _dataService: DataService,
+    private _ref: ChangeDetectorRef
+  ) {}
+  skills: Skill[] = [];
   ngOnInit(): void {
-    this.skills = this.skillsData.map((skill) => ({
-      name: skill,
-      imagePath: `assets/svg/skills/${this.toImageName(skill)}.svg`,
-    }));
+    this._dataService.getSkills().subscribe((res) => {
+      this.skills = res;
+      this._ref.markForCheck();
+    });
   }
-
-  toImageName = (text: string) =>
-    text
-      .toLowerCase()
-      .split(' ')
-      .map((word, index) =>
-        index === 0 ? word : word.charAt(0) + word.slice(1)
-      )
-      .join('');
 }
