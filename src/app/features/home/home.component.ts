@@ -7,12 +7,13 @@ import { SkillComponent } from '../skill/skill.component';
 import { ProjectComponent } from '../project/project.component';
 import { PersonalData } from '@app/core/models';
 import { DataService } from '@app/core/services';
+import { BioComponent } from '../bio/bio.component';
 
 @Component({
   selector: 'app-home',
   imports: [
     CommonModule,
-    CodePreviewComponent,
+    BioComponent,
     AboutComponent,
     ExperienceComponent,
     SkillComponent,

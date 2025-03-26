@@ -33,11 +33,11 @@
     },
     {
         "name": "MySQL",
-        "imagePath": "assets/svg/skills/mySql.svg"
+        "imagePath": "assets/svg/skills/mysql.svg"
     },
     {
         "name": "PostgreSQL",
-        "imagePath": "assets/svg/skills/postgreSql.svg"
+        "imagePath": "assets/svg/skills/postgresql.svg"
     },
     {
         "name": "Git",
