@@ -14,7 +14,7 @@
     <div class="flex flex-col gap-6">
       <div
         *ngFor="let project of projects; let i = index"
-        [id]="'sticky-card-' + (i + 1).toString()"
+        [style]="'top: calc(' + (i + 1) + ' * 4rem)'"
         class="sticky-card w-full mx-auto max-w-2xl sticky"
       >
         <div

@@ -8,6 +8,8 @@ import { ProjectComponent } from '../project/project.component';
 import { PersonalData } from '@app/core/models';
 import { DataService } from '@app/core/services';
 import { BioComponent } from '../bio/bio.component';
+import { EducationComponent } from '../education/education.component';
+import { ContactComponent } from '../contact/contact.component';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +20,8 @@ import { BioComponent } from '../bio/bio.component';
     ExperienceComponent,
     SkillComponent,
     ProjectComponent,
+    EducationComponent,
+    ContactComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
