@@ -24,7 +24,8 @@
       "@app/*": ["app/*"],
       "@layout": ["app/core/layout/*"],
       "@environment/*": ["environments/*.ts"]
-    }
+    },
+    "resolveJsonModule": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
