@@ -5,17 +5,17 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
-import { GlowDirective } from '@app/core/directives/glow.directive';
 import { Experience } from '@app/core/models';
 import { DataService } from '@app/core/services';
 import experience from '../../../assets/lottie/code.json';
 import { AnimationOptions, LottieComponent } from 'ngx-lottie';
+import { GlowCardComponent } from '@app/core/layout/glow-card/glow-card.component';
 export function playerFactory() {
   return import('lottie-web'); // ✅ Lazy loading Lottie
 }
 @Component({
   selector: 'app-experience',
-  imports: [CommonModule, GlowDirective, LottieComponent],
+  imports: [CommonModule, LottieComponent, GlowCardComponent],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

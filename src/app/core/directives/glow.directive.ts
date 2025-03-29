@@ -1,4 +1,5 @@
 import {
+  ChangeDetectorRef,
   Directive,
   ElementRef,
   HostListener,
@@ -22,7 +23,7 @@ export class GlowDirective implements OnInit {
     opacity: 0,
   };
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef, private _ref: ChangeDetectorRef) {}
 
   ngOnInit() {
     const container = this.el.nativeElement;
@@ -33,6 +34,7 @@ export class GlowDirective implements OnInit {
       '--direction',
       this.config.vertical ? 'column' : 'row'
     );
+    container.class
   }
 
   @HostListener('document:mousemove', ['$event'])
@@ -65,5 +67,7 @@ export class GlowDirective implements OnInit {
       angle = angle < 0 ? angle + 360 : angle;
       card.style.setProperty('--start', (angle + 90).toString());
     });
+
+    this._ref.markForCheck();
   }
 }

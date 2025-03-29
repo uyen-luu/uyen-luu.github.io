@@ -37,67 +37,59 @@
       </div>
       <div>
         <div class="flex flex-col gap-6">
-          <div
-            class="glow-container-education-1 glow-container"
+          <app-glow-card
             *ngFor="let item of items; let i = index"
-            [class]="' glow-container glow-container-experience-' + (i + 1)"
-            style="--gap: 32; --blur: 12; --spread: 80; --direction: row"
+            [identifier]="'education-' + item.id.toString()"
           >
-            <article
-              class="glow-card glow-card-education-1 h-fit cursor-pointer border border-[#2a2e5a] transition-all duration-300 relative bg-[#101123] text-gray-200 rounded-xl hover:border-transparent w-full"
-              style="--active: 0; --start: 262.09730449741414"
-            >
-              <div class="glows"></div>
-              <div class="p-3 relative text-white">
-                <img
-                  alt="Hero"
-                  loading="lazy"
-                  width="1080"
-                  height="200"
-                  decoding="async"
-                  data-nimg="1"
-                  class="absolute bottom-0 opacity-80"
-                  style="color: transparent"
-                  src="assets/images/blur-23.svg"
-                />
-                <div class="flex justify-center">
-                  <p class="text-xs sm:text-sm text-[#16f2b3]">
-                    {{ item.duration }}
+            <div class="p-3 relative text-white">
+              <img
+                alt="Hero"
+                loading="lazy"
+                width="1080"
+                height="200"
+                decoding="async"
+                data-nimg="1"
+                class="absolute bottom-0 opacity-80"
+                style="color: transparent"
+                src="assets/images/blur-23.svg"
+              />
+              <div class="flex justify-center">
+                <p class="text-xs sm:text-sm text-[#16f2b3]">
+                  {{ item.duration }}
+                </p>
+              </div>
+              <div class="flex items-center gap-x-8 px-3 py-5">
+                <div
+                  class="text-violet-500 transition-all duration-300 hover:scale-125"
+                >
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 16 16"
+                    height="36"
+                    width="36"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
+                    ></path>
+                    <path
+                      d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-base sm:text-xl mb-2 font-medium uppercase">
+                    {{ item.title }}
+                  </p>
+                  <p class="text-sm sm:text-base">
+                    {{ item.institution }}
                   </p>
                 </div>
-                <div class="flex items-center gap-x-8 px-3 py-5">
-                  <div
-                    class="text-violet-500 transition-all duration-300 hover:scale-125"
-                  >
-                    <svg
-                      stroke="currentColor"
-                      fill="currentColor"
-                      stroke-width="0"
-                      viewBox="0 0 16 16"
-                      height="36"
-                      width="36"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
-                      ></path>
-                      <path
-                        d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="text-base sm:text-xl mb-2 font-medium uppercase">
-                      {{ item.title }}
-                    </p>
-                    <p class="text-sm sm:text-base">
-                      {{ item.institution }}
-                    </p>
-                  </div>
-                </div>
               </div>
-            </article>
-          </div>
+            </div></app-glow-card
+          >
         </div>
       </div>
     </div>

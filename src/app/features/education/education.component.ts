@@ -9,10 +9,11 @@ import { Education } from '@app/core/models';
 import { DataService } from '@app/core/services';
 import { AnimationOptions, LottieComponent } from 'ngx-lottie';
 import lottieFile from '../../../assets/lottie/study.json';
+import { GlowCardComponent } from '@app/core/layout/glow-card/glow-card.component';
 
 @Component({
   selector: 'app-education',
-  imports: [CommonModule, LottieComponent],
+  imports: [CommonModule, LottieComponent, GlowCardComponent],
   templateUrl: './education.component.html',
   styleUrl: './education.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
