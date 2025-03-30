@@ -20,6 +20,7 @@ export class AchievementPannelComponent implements OnInit {
   @Input() title!: string;
   @Input() items!: GlowCard[];
   @Input() animationData!: any;
+  @Input() icon?: string;
   animationOptions!: AnimationOptions;
   constructor() {}
   ngOnInit(): void {

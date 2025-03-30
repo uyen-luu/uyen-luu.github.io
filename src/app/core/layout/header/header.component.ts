@@ -19,16 +19,16 @@ export class HeaderComponent {
       path: '/#experience',
     },
     {
+      name: 'Certs',
+      path: '/#certs',
+    },
+    {
       name: 'Skills',
       path: '/#skills',
     },
     {
       name: 'Education',
       path: '/#education',
-    },
-    {
-      name: 'Blogs',
-      path: '/#blogs',
     },
     {
       name: 'Projects',
