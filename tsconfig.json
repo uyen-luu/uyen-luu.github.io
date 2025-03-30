@@ -23,7 +23,8 @@
     "paths": {
       "@app/*": ["app/*"],
       "@layout": ["app/core/layout/*"],
-      "@environment/*": ["environments/*.ts"]
+      "@environment/*": ["environments/*.ts"],
+      "@assets/*": ["assets/*"]
     },
     "resolveJsonModule": true
   },
