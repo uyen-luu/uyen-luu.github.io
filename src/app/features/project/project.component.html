@@ -36,12 +36,20 @@
               </div>
               <div class="ml-4 lg:ml-8 mr-2">
                 <span class="text-white">tools:</span
-                ><span class="text-gray-400"> ['</span>
-                <ng-container *ngFor="let tool of project.techStacks.all">
-                  <span class="text-amber-300">{{ tool }}</span
-                  ><span class="text-gray-400">', '</span>
+                ><span class="text-gray-400"> [</span>
+                <ng-container
+                  *ngFor="let tool of project.techStacks.all; let last = last"
+                >
+                  <span class="text-amber-300">
+                    <span class="text-gray-400">'</span>{{ tool
+                    }}<span class="text-gray-400">'</span></span
+                  ><span
+                    *ngIf="!last"
+                    class="text-gray-400"
+                    [innerText]="', '"
+                  ></span>
                 </ng-container>
-                ><span class="text-gray-400">],</span>
+                <span class="text-gray-400">],</span>
               </div>
               <div>
                 <span class="ml-4 lg:ml-8 mr-2 text-white">myRole:</span

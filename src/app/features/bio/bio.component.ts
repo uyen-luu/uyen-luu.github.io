@@ -12,17 +12,7 @@ import { PersonalData } from '@app/core/models';
 })
 export class BioComponent {
   @Input() personalData!: PersonalData;
-  skills = [
-    'React',
-    'NextJS',
-    'Redux',
-    'Express',
-    'NestJS',
-    'MySql',
-    'MongoDB',
-    'Docker',
-    'AWS',
-  ];
+  skills = ['Angular2+', '.NET', 'Azure'];
   booleanFields = {
     hardWorker: true,
     quickLearner: true,
