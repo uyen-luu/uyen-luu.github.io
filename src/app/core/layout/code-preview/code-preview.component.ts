@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-code-preview',
@@ -9,20 +9,5 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CodePreviewComponent {
-  skills = [
-    'React',
-    'NextJS',
-    'Redux',
-    'Express',
-    'NestJS',
-    'MySql',
-    'MongoDB',
-    'Docker',
-    'AWS',
-  ];
-  booleanFields = {
-    hardWorker: true,
-    quickLearner: true,
-    problemSolver: true,
-  };
+  @Input() title?: string;
 }

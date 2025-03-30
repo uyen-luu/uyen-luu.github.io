@@ -12,4 +12,20 @@ import { PersonalData } from '@app/core/models';
 })
 export class BioComponent {
   @Input() personalData!: PersonalData;
+  skills = [
+    'React',
+    'NextJS',
+    'Redux',
+    'Express',
+    'NestJS',
+    'MySql',
+    'MongoDB',
+    'Docker',
+    'AWS',
+  ];
+  booleanFields = {
+    hardWorker: true,
+    quickLearner: true,
+    problemSolver: true,
+  };
 }
