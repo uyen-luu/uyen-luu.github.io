@@ -7,7 +7,7 @@ import {
 import { AchievementPannelComponent } from '@app/core/layout/achievement-pannel/achievement-pannel.component';
 import { GlowCard } from '@app/core/models';
 import { DataService } from '@app/core/services';
-import lottieFile from '@assets/lottie/development.json';
+import lottieFile from '@assets/lottie/cert.json';
 @Component({
   selector: 'app-certification',
   imports: [AchievementPannelComponent],
