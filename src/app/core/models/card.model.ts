@@ -15,6 +15,7 @@ export class GlowCard {
   title!: string;
   organization!: string;
   duration!: string;
+  url!: string;
   constructor(init?: Partial<GlowCard>) {
     Object.assign(this, init);
   }

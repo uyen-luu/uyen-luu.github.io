@@ -10,6 +10,7 @@ import { DataService } from '@app/core/services';
 import { BioComponent } from '../bio/bio.component';
 import { EducationComponent } from '../education/education.component';
 import { ContactComponent } from '../contact/contact.component';
+import { CertificationComponent } from "../certification/certification.component";
 
 @Component({
   selector: 'app-home',
@@ -21,8 +22,9 @@ import { ContactComponent } from '../contact/contact.component';
     SkillComponent,
     ProjectComponent,
     EducationComponent,
-    ContactComponent
-  ],
+    ContactComponent,
+    CertificationComponent
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

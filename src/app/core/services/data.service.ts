@@ -5,6 +5,7 @@ import {
   Contact,
   Education,
   Experience,
+  GlowCard,
   PersonalData,
   Project,
   Skill,
@@ -40,5 +41,9 @@ export class DataService {
 
   getSkills(): Observable<Skill[]> {
     return this.http.get<Skill[]>(`${this.basePath}skills.json`);
+  }
+
+  getCerts(): Observable<GlowCard[]> {
+    return this.http.get<GlowCard[]>(`${this.basePath}cert.json`);
   }
 }
