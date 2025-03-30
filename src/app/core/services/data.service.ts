@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import {
   Contact,
   Education,
@@ -9,6 +9,7 @@ import {
   PersonalData,
   Project,
   Skill,
+  TechStacks,
 } from '../models';
 
 @Injectable({
@@ -32,7 +33,20 @@ export class DataService {
   }
 
   getProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(`${this.basePath}projects.json`);
+    return this.http.get<Project[]>(`${this.basePath}projects.json`).pipe(
+      map((items) => {
+        items.forEach((item) => {
+          if (!!item.techStacks) {
+            item.techStacks.all = Object.entries(item.techStacks)
+              .filter(([key]) => key !== 'all') // Exclude "all" itself
+              .flatMap(([, value]) => (Array.isArray(value) ? value : []));
+          } else {
+            item.techStacks = new TechStacks({ all: [] });
+          }
+        });
+        return items;
+      })
+    );
   }
 
   getContact(): Observable<Contact> {

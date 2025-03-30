@@ -31,14 +31,30 @@ export interface Social {
   uri: string;
   icon: string;
 }
+export class TechStacks {
+  hosting!: string[];
+  database!: string[];
+  backEnd!: string[];
+  frontEnd!: string[];
+  mobile?: string[]; // Optional, if some projects don't have mobile tech
+  thirdPartyServices?: string[]; // Optional, since not all projects have third-party services
+  all!: string[];
+  constructor(init?: Partial<TechStacks>) {
+    Object.assign(this, init);
+  }
+}
+
 export interface Project {
   id: number;
   name: string;
+  techStacks: TechStacks;
+  position: string;
+  teamSize: number | string;
+  startDate: string;
+  endDate: string;
+  duration: string;
   description: string;
-  tools: string[];
-  role: string;
-  code: string;
-  demo: string;
+  blog: string;
 }
 
 export interface Contact {
