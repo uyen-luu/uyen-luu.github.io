@@ -30,6 +30,10 @@ on:
       - package-lock.json
       - .github/workflows/**
 
+permissions:
+  contents: write  # This gives write access to repository contents (enabling pushing to gh-pages)
+  pull-requests: write  # This can be useful if you need PR permissions as well (optional)
+
 env:
   WORKING_DIRECTORY: ./
   ARTIFACT_NAME: angular-build
