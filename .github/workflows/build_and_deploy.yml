@@ -90,3 +90,6 @@ jobs:
         with:
           branch: gh-pages
           folder: dist/ul-portfolio
+          clean: true  # Ensure previous deployment folder is cleaned up before deployment
+          force: true  # Force push the changes even if there are conflicts
+      
