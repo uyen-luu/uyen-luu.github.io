@@ -30,10 +30,6 @@ on:
       - package-lock.json
       - .github/workflows/**
 
-permissions:
-  contents: write  # This gives write access to repository contents (enabling pushing to gh-pages)
-  pull-requests: write  # This can be useful if you need PR permissions as well (optional)
-
 env:
   WORKING_DIRECTORY: ./
   ARTIFACT_NAME: angular-build
@@ -64,36 +60,22 @@ jobs:
         run: npm run build
         working-directory: ${{ env.WORKING_DIRECTORY }}
 
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
         with:
-          name:  ${{ env.ARTIFACT_NAME }}
-          path: dist/
-          retention-days: 7
+          path: dist/ul-portfolio
 
   deploy:
     if: github.event_name != 'workflow_dispatch' || github.event.inputs.trigger_deploy == 'true'  # Runs if triggered manually or input is true
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build  # Ensures deploy happens only after the build
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name:  ${{ env.ARTIFACT_NAME }}
-          path: dist/
-
-      - name: Debug dist folder
-        run: ls -R dist/
-
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: dist/ul-portfolio
-          clean: true  # Ensure previous deployment folder is cleaned up before deployment
-          force: true  # Force push the changes even if there are conflicts
+        id: deployment
+        uses: actions/deploy-pages@v4
       
