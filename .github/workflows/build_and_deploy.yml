@@ -12,7 +12,7 @@ on:
       trigger_deploy:
         description: "Should the deploy job run?"
         required: true
-        default: true # Default is true, meaning deploy job will run unless explicitly set to false
+        default: false # Default is true, meaning deploy job will run unless explicitly set to false
         type: boolean
 
   pull_request:
