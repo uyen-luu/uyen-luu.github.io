@@ -1,0 +1,90 @@
+[
+    {
+        "name": "Angular",
+        "imagePath": "assets/svg/skills/angular.svg"
+    },
+    {
+        "name": "HTML",
+        "imagePath": "assets/svg/skills/html.svg"
+    },
+    {
+        "name": "CSS",
+        "imagePath": "assets/svg/skills/css.svg"
+    },
+    {
+        "name": "Javascript",
+        "imagePath": "assets/svg/skills/javascript.svg"
+    },
+    {
+        "name": "Typescript",
+        "imagePath": "assets/svg/skills/typescript.svg"
+    },
+    {
+        "name": "Tailwind",
+        "imagePath": "assets/svg/skills/tailwind.svg"
+    },
+    {
+        "name": "Git",
+        "imagePath": "assets/svg/skills/git.svg"
+    },
+    {
+        "name": "Github",
+        "imagePath": "assets/svg/skills/github-white.svg"
+    },
+    {
+        "name": "Bootstrap",
+        "imagePath": "assets/svg/skills/bootstrap.svg"
+    },
+    {
+        "name": "Docker",
+        "imagePath": "assets/svg/skills/docker.svg"
+    },
+    {
+        "name": "MaterialUI",
+        "imagePath": "assets/svg/skills/materialui.svg"
+    },
+    {
+        "name": "Azure",
+        "imagePath": "assets/svg/skills/azure.svg"
+    },
+    {
+        "name": "C #",
+        "imagePath": "assets/svg/skills/csharp.svg"
+    },
+    {
+        "name": ".NET",
+        "imagePath": "assets/svg/skills/dotnet.svg"
+    },
+    {
+        "name": ".NET Core",
+        "imagePath": "assets/svg/skills/dotnetcore.svg"
+    },
+    {
+        "name": "Linux",
+        "imagePath": "assets/svg/skills/linux.svg"
+    },
+    {
+        "name": "Markdown",
+        "imagePath": "assets/svg/skills/markdown.svg"
+    },
+    {
+        "name": "Mongo DB",
+        "imagePath": "assets/svg/skills/mongodb.svg"
+    },
+    {
+        "name": "Microsoft",
+        "imagePath": "assets/svg/skills/microsoft.svg"
+    },
+    {
+        "name": "Google",
+        "imagePath": "assets/svg/skills/google.svg"
+    },
+    {
+        "name": "Mailgun",
+        "imagePath": "assets/svg/skills/mailgun.svg"
+    },
+    {
+        "name": "DevExpress",
+        "imagePath": "assets/svg/skills/devexpress.svg"
+    }
+]

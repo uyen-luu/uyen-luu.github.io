@@ -1,1 +1,11 @@
-<p>home works!</p>
+<ng-container *ngIf="!!personalData">
+  <app-bio [personalData]="personalData"></app-bio>
+  <app-about *ngIf="!!personalData" [personal]="personalData"></app-about>
+</ng-container>
+
+<app-experience></app-experience>
+<app-certification></app-certification>
+<app-skill></app-skill>
+<app-project></app-project>
+<app-education></app-education>
+<app-contact></app-contact>

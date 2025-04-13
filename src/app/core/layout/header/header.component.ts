@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -12,24 +11,28 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class HeaderComponent {
   items = [
     {
-      name: 'Home',
-      path: '/home',
+      name: 'About',
+      path: '/#about',
     },
     {
-      name: 'About',
-      path: '/about',
+      name: 'Experience',
+      path: '/#experience',
+    },
+    {
+      name: 'Certs',
+      path: '/#certs',
+    },
+    {
+      name: 'Skills',
+      path: '/#skills',
     },
     {
       name: 'Education',
-      path: '/skills',
+      path: '/#education',
     },
     {
-      name: 'Portfolio',
-      path: '/portfolio',
-    },
-    {
-      name: 'Contact',
-      path: '/contact',
+      name: 'Projects',
+      path: '/#projects',
     },
   ];
 }

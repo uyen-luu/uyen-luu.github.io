@@ -1,9 +1,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use "@angular/material" as mat;
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@use "tailwindcss";
 
 html {
   @include mat.theme(
@@ -55,4 +53,15 @@ body {
   a.active {
     color: #f8f9fa;
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: #0d1224;
 }

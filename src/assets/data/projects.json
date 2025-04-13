@@ -1,0 +1,444 @@
+[
+    {
+        "id": 1,
+        "name": "Data recovery system",
+        "techStacks": {
+            "database": [
+                "SQL Server",
+                "MySQL",
+                "MongoDb"
+            ],
+            "backEnd": [
+                "C#",
+                "VB.NET",
+                "PHP",
+                "Python"
+            ],
+            "frontEnd": [
+                "ASP.NET Webform",
+                "ASP.NET MVC",
+                "Telerik UI controls for AJAX ASP.NET",
+                "Javascript/Bootstrap",
+                "Wordpress",
+                "Angular + Devextreme UI"
+            ],
+            "thirdPartyServices": [
+                "Twilio",
+                "Sprite.NET",
+                "Quickbooks",
+                "Mailgun"
+            ],
+            "hosting": [
+                "Window Server",
+                "IIS",
+                "SMTP",
+                "FTP",
+                "Wordpress"
+            ]
+        },
+        "position": "Team member, team leader",
+        "teamSize": "2-3",
+        "startDate": "Apr 2017",
+        "endDate": "Dec 2018",
+        "duration": "1 years 8 months",
+        "description": "My first real project at Enlab. In the beginning, I worked under the supervision of another more experienced colleague. After 1 month, I work independently. By the end of 2017, new members were added and I took responsibility for training them and then transferring that project to them to move to another project.",
+        "blog": ""
+    },
+    {
+        "id": 2,
+        "name": "Flooring & Carpet Sales Management System",
+        "techStacks": {
+            "hosting": [
+                "Window Server",
+                "IIS",
+                "SMTP",
+                "FTP"
+            ],
+            "database": [
+                "SQL Server",
+                "Redis",
+                "SSIS"
+            ],
+            "backEnd": [
+                ".NET framework",
+                ".NET Core",
+                "Telerik reporting"
+            ],
+            "frontEnd": [
+                "ASP.NET Webform",
+                "ASP.NET Core API",
+                "Telerik UI controls for AJAX ASP.NET",
+                "Javascript/Bootstrap",
+                "Angular + Devextreme UI"
+            ],
+            "thirdPartyServices": [
+                "Mailchimp",
+                "BulkSMS",
+                "Xero",
+                "Mailgun",
+                "Google"
+            ]
+        },
+        "position": "Team member, team leader",
+        "teamSize": "2-5",
+        "startDate": "Dec 2018",
+        "endDate": "Mar 2025",
+        "duration": "6 years 3 months 29 days",
+        "description": "My boss bid on this project and then gave it to me to implement. The biggest challenge is that an AU team has developed this project for 2 years but cannot release it to production. I need to release it within 4 weeks to get the client's trust, and beyond that, it is a long-term contract. I met the deadline of releasing the project and then took 2 weeks more to fix/improve some matters based on the client's feedback. So far, this project has brought us a trusted client with many demands/apps. From this app's beginning, now this system has several portals for employees, customers, installers, franchise owners, and some mobile versions. Besides, as a Solution business in AU, this client also gave us some other projects, I'm not working on all of them but still contribute to these teams for solution/technical.",
+        "blog": "https://enlabsoftware.com/works/custom-software-for-procurement/flooring-carpet-procurement-system.html"
+    },
+    {
+        "id": 3,
+        "name": "ERP System",
+        "techStacks": {
+            "hosting": [
+                "Window Server",
+                "IIS"
+            ],
+            "database": [
+                "SQL Server"
+            ],
+            "backEnd": [
+                ".NET Core",
+                "Microservice"
+            ],
+            "frontEnd": [
+                "ASP.NET Core API",
+                "Angular + Devextreme UI"
+            ],
+            "thirdPartyServices": [
+                "Mailgun",
+                "Google",
+                "Azure"
+            ]
+        },
+        "position": "Team member, module leader, technical supporter",
+        "teamSize": "",
+        "startDate": "",
+        "endDate": "",
+        "duration": "",
+        "description": "This is an internal project at Enlab",
+        "blog": "https://enlabsoftware.com/works/custom-erp-software-development/eldesk-erp.html"
+    },
+    {
+        "id": 4,
+        "name": "Procurement and Invoicing",
+        "techStacks": {
+            "hosting": [
+                "Desktop Application"
+            ],
+            "database": [
+                "SQL Server"
+            ],
+            "backEnd": [
+                ".NET"
+            ],
+            "frontEnd": [
+                "ASP.NET Winform",
+                "DevExpress UI"
+            ],
+            "thirdPartyServices": [
+                "Sentry.io"
+            ]
+        },
+        "position": "Developer, Tester",
+        "teamSize": 2,
+        "startDate": "",
+        "endDate": "",
+        "duration": "",
+        "description": "",
+        "blog": "https://enlabsoftware.com/works/custom-software-for-procurement/procurement-and-invoicing.html"
+    },
+    {
+        "id": 5,
+        "name": "Resource Recruitment",
+        "techStacks": {
+            "hosting": [
+                "Window Server"
+            ],
+            "database": [
+                "SQL Server"
+            ],
+            "backEnd": [
+                ".NET"
+            ],
+            "frontEnd": [
+                "KnockoutJS",
+                "Devextreme"
+            ],
+            "thirdPartyServices": [
+                "Azure"
+            ]
+        },
+        "position": "Team member",
+        "teamSize": "4-6",
+        "startDate": "",
+        "endDate": "",
+        "duration": "",
+        "description": "",
+        "blog": "https://enlabsoftware.com/works/custom-hr-software-development/recruitment-agency-software.html"
+    },
+    {
+        "id": 6,
+        "name": "Property Management System",
+        "techStacks": {
+            "hosting": [
+                "Window Server",
+                "IIS",
+                "SMTP",
+                "FTP"
+            ],
+            "database": [
+                "SQL Server",
+                "Redis",
+                "SSIS"
+            ],
+            "backEnd": [
+                ".NET framework",
+                ".NET Core",
+                "Telerik reporting"
+            ],
+            "frontEnd": [
+                "ASP.NET Webform",
+                "ASP.NET Core API",
+                "Telerik UI controls for AJAX ASP.NET",
+                "Javascript/Bootstrap",
+                "Angular + Devextreme UI"
+            ],
+            "mobile": [
+                "Flutter"
+            ],
+            "thirdPartyServices": [
+                "Mailchimp",
+                "Google"
+            ]
+        },
+        "position": "Team member, team leader, technical supporter",
+        "teamSize": "4-5",
+        "startDate": "",
+        "endDate": "",
+        "duration": "",
+        "description": "",
+        "blog": "https://enlabsoftware.com/works/custom-software-for-real-estate/property-management.html"
+    },
+    {
+        "id": 7,
+        "name": "Truflow VJS Cloud",
+        "techStacks": {
+            "hosting": [
+                "Window Server",
+                "IIS",
+                "SMTP",
+                "FTP"
+            ],
+            "database": [
+                "SQL Server"
+            ],
+            "backEnd": [
+                ".NET Core",
+                "Telerik reporting"
+            ],
+            "frontEnd": [
+                "ASP.NET Core API",
+                "Angular + Devextreme UI"
+            ]
+        },
+        "position": "Team leader",
+        "teamSize": 2,
+        "startDate": "May 2021",
+        "endDate": "Mar 2025",
+        "duration": "3 years 10 months 10 days",
+        "description": "",
+        "blog": ""
+    },
+    {
+        "id": 8,
+        "name": "Hotel Revenue System",
+        "techStacks": {
+            "hosting": [
+                "Window Server",
+                "Azure App Service",
+                "Azure Function App",
+                "FTP",
+                "Wordpress",
+                "Window background services",
+                "Azure Storage/File Share",
+                "VNet"
+            ],
+            "database": [
+                "SQL Server"
+            ],
+            "backEnd": [
+                "C#",
+                "Azure Automation job",
+                "ASP.NET Core Web API"
+            ],
+            "frontEnd": [
+                "Wordpress",
+                "Angular + Devextreme UI"
+            ],
+            "thirdPartyServices": [
+                "Microsoft Power BI",
+                "Mailgun",
+                "Microsoft Graph API",
+                "Azure B2C",
+                "Floatrates",
+                "Selenium",
+                "Rapid API"
+            ]
+        },
+        "position": "Team leader",
+        "teamSize": 2,
+        "startDate": "Dec 2019",
+        "endDate": "May 2022",
+        "duration": "2 years 5 months",
+        "description": "",
+        "blog": "https://enlabsoftware.com/works/custom-software-for-data-management/hotel-revenue-management-system.html https://clutch.co/go-to-review/92e27e13-c6cf-4725-974f-d660c74c6905/38711"
+    },
+    {
+        "id": 9,
+        "name": "Coffee Procurement Marketplace",
+        "techStacks": {
+            "hosting": [
+                "Azure App Service",
+                "Azure Storage/File Share",
+                "VNet",
+                "Azure Function App"
+            ],
+            "database": [
+                "Azure SQL Server",
+                "Azure Cosmos DB"
+            ],
+            "backEnd": [
+                "C#",
+                "ASP.NET Core Web API"
+            ],
+            "frontEnd": [
+                "Angular + Devextreme UI",
+                "Flutter"
+            ],
+            "thirdPartyServices": [
+                "Some API to streaming market prices (couldn't remember the name)"
+            ]
+        },
+        "position": "FE Leader, BE supporter",
+        "teamSize": 7,
+        "startDate": "",
+        "endDate": "",
+        "duration": "",
+        "description": "",
+        "blog": "https://enlabsoftware.com/works/marketplace/coffee-procurement-marketplace-platform.html"
+    },
+    {
+        "id": 10,
+        "name": "Toolpath",
+        "techStacks": {
+            "hosting": [
+                "Azure App Service",
+                "Azure Storage/File Share",
+                "VNet"
+            ],
+            "database": [
+                "SQL Server"
+            ],
+            "backEnd": [
+                "C#",
+                "ASP.NET Core Web API"
+            ],
+            "frontEnd": [
+                "Angular",
+                "Angular Material",
+                "Bootstrap",
+                "ThreeJs"
+            ],
+            "thirdPartyServices": [
+                "Azure B2C"
+            ]
+        },
+        "position": "Team member",
+        "teamSize": 4,
+        "startDate": "Apr 2022",
+        "endDate": "Sep 2022",
+        "duration": "5 months 29 days",
+        "description": "- Develop & maintain",
+        "blog": ""
+    },
+    {
+        "id": 11,
+        "name": "Capacity Data Master",
+        "techStacks": {
+            "hosting": [
+                "Azure App Service",
+                "Azure Storage/File Share",
+                "VNet"
+            ],
+            "database": [
+                "SQL Server"
+            ],
+            "backEnd": [
+                "C#",
+                "ASP.NET Core Web API"
+            ],
+            "frontEnd": [
+                "Angular",
+                "Angular Material",
+                "TailwindCss",
+                "HighChart",
+                "Swashbuckle"
+            ],
+            "thirdPartyServices": [
+                "Azure B2C",
+                "Azure DevOps CI/CD"
+            ]
+        },
+        "position": "Team member",
+        "teamSize": 6,
+        "startDate": "Sep 2022",
+        "endDate": "Jun 2023",
+        "duration": "9 months 18 days",
+        "description": "- Migrate AngularJS to Angular 14 - Migrate .NET framework 4.7.2 to .NET 6 - Migrate on-premises services to Azure cloud",
+        "blog": ""
+    },
+    {
+        "id": 12,
+        "name": "Product Data Highway",
+        "techStacks": {
+            "hosting": [
+                "Azure App Service",
+                "Azure Storage/File Share",
+                "VNet",
+                "Azure function",
+                "Azure container app"
+            ],
+            "database": [
+                "SQL Server",
+                "Azure SQL Server",
+                "Azure Cosmos DB",
+                "Redis (cache)"
+            ],
+            "backEnd": [
+                "C#",
+                "F#",
+                "ASP.NET Core Web API",
+                "Docker"
+            ],
+            "frontEnd": [
+                "Blazor",
+                "Swashbuckle"
+            ],
+            "thirdPartyServices": [
+                "Azure B2C",
+                "Azure Event Grid",
+                "Azure Service Bus",
+                "Azure DevOps CI/CD"
+            ]
+        },
+        "position": "Team member",
+        "teamSize": 8,
+        "startDate": "Feb 2023",
+        "endDate": "Mar 2025",
+        "duration": "2 years 1 month 29 days",
+        "description": "- Develop & maintain existing subsystems - Build new subsystems - Integrate with other subsystems",
+        "blog": ""
+    }
+]
