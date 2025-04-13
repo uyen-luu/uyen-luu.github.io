@@ -30,6 +30,10 @@ on:
       - package-lock.json
       - .github/workflows/**
 
+permissions:
+  pages: write      # to deploy to Pages
+  id-token: write   # to verify the deployment originates from an appropriate source
+
 env:
   WORKING_DIRECTORY: ./
   ARTIFACT_NAME: angular-build
