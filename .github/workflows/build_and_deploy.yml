@@ -1,9 +1,6 @@
 name: Build and Deploy
 
 on:
-  pull_request:
-    types:
-      - closed # Run when a PR is merged
   push:
     branches:
       - main
@@ -14,6 +11,9 @@ on:
       - package.json
       - package-lock.json
       - .github/workflows/**
+  pull_request:
+    types:
+      - closed # Run when a PR is merged
   workflow_dispatch:
 
 env:
