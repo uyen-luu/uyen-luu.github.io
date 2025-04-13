@@ -11,6 +11,9 @@ on:
       - package.json
       - package-lock.json
       - .github/workflows/**
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 env:
@@ -35,7 +38,7 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Build Angular app
-        run: npm run build -- --configuration production
+        run: npm run build
         working-directory: ${{ env.WORKING_DIRECTORY }}
 
       # Step 5: Upload Build Artifacts
