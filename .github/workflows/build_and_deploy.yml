@@ -4,20 +4,20 @@ on:
   workflow_dispatch:
     inputs:
       trigger_build:
-        description: 'Should the build job run?'
+        description: "Should the build job run?"
         required: true
-        default: true  # Default is true, meaning build job will run unless explicitly set to false
+        default: true # Default is true, meaning build job will run unless explicitly set to false
         type: boolean
 
       trigger_deploy:
-        description: 'Should the deploy job run?'
+        description: "Should the deploy job run?"
         required: true
-        default: true  # Default is true, meaning deploy job will run unless explicitly set to false
+        default: true # Default is true, meaning deploy job will run unless explicitly set to false
         type: boolean
 
   pull_request:
     types:
-      - closed  # Run when PR is merged
+      - closed # Run when PR is merged
 
   push:
     branches:
@@ -30,22 +30,17 @@ on:
       - package-lock.json
       - .github/workflows/**
 
-permissions:
-  pages: write      # to deploy to Pages
-  id-token: write   # to verify the deployment originates from an appropriate source
-  contents: write
-
 env:
   WORKING_DIRECTORY: ./
-  ARTIFACT_NAME: angular-build
+  ARTIFACT_NAME: ul-portfolio
 
 jobs:
   build:
-    if: github.event_name != 'workflow_dispatch' || github.event.inputs.trigger_build == 'true'  # Runs if triggered manually or input is true
+    if: github.event_name != 'workflow_dispatch' || github.event.inputs.trigger_build == 'true' # Runs if triggered manually or input is true
     runs-on: ubuntu-latest
 
     outputs:
-      artifact-name:  ${{ env.ARTIFACT_NAME }}
+      artifact-name: ${{ env.ARTIFACT_NAME }}
 
     steps:
       - name: Checkout code
@@ -54,8 +49,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
         run: npm install
@@ -64,12 +59,39 @@ jobs:
       - name: Build Angular app
         run: npm run build
         working-directory: ${{ env.WORKING_DIRECTORY }}
-      
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: dist/
+          retention-days: 7
+
+  deploy:
+    if: github.event_name != 'workflow_dispatch' || github.event.inputs.trigger_deploy == 'true' # Runs if triggered manually or input is true
+    runs-on: ubuntu-latest
+    needs: build # Ensures deploy happens only after the build
+
+    permissions:
+      contents: write # This gives write access to repository contents (enabling pushing to gh-pages)
+      pull-requests: write # This can be useful if you need PR permissions as well (optional)
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: dist/
+
+      - name: Debug dist folder
+        run: ls -R dist/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/ul-portfolio
-          branch: prod  
-          token: ${{ secrets.GITHUB_TOKEN }}
-      
+          branch: gh-pages
+          folder: dist/ul-portfolio/browser
+          clean: true # Ensure previous deployment folder is cleaned up before deployment
+          force: true # Force push the changes even if there are conflicts
