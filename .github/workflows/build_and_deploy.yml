@@ -64,10 +64,12 @@ jobs:
       - name: Build Angular app
         run: npm run build
         working-directory: ${{ env.WORKING_DIRECTORY }}
-      - name: Deploy to gh pages
-        run: |
-          npx angular-cli-ghpages --dir=dist/ul-portfolio
-        env:
-          CI: true
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
+      
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist/ul-portfolio
+          branch: prod  
+          token: ${{ secrets.GH_TOKEN }}
       
