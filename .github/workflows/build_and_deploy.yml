@@ -33,6 +33,7 @@ on:
 env:
   WORKING_DIRECTORY: ./
   ARTIFACT_NAME: ul-portfolio
+  OUTPUT_PATH: dist/ul-portfolio/browser
 
 jobs:
   build:
@@ -57,7 +58,9 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Build Angular app
-        run: npm run build
+        run: |
+          npm run build
+          cp ${{ env.OUTPUT_PATH }}/index.html ${{ env.OUTPUT_PATH }}/404.html
         working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Upload build artifact
@@ -92,6 +95,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/ul-portfolio/browser
+          folder: ${{ env.OUTPUT_PATH }}
           clean: true # Ensure previous deployment folder is cleaned up before deployment
           force: true # Force push the changes even if there are conflicts

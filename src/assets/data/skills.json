@@ -4,6 +4,10 @@
         "imagePath": "assets/svg/skills/angular.svg"
     },
     {
+        "name": "A. Material",
+        "imagePath": "assets/svg/skills/angular-material.svg"
+    },
+    {
         "name": "HTML",
         "imagePath": "assets/svg/skills/html.svg"
     },
@@ -40,16 +44,8 @@
         "imagePath": "assets/svg/skills/docker.svg"
     },
     {
-        "name": "MaterialUI",
-        "imagePath": "assets/svg/skills/materialui.svg"
-    },
-    {
         "name": "Azure",
         "imagePath": "assets/svg/skills/azure.svg"
-    },
-    {
-        "name": "C #",
-        "imagePath": "assets/svg/skills/csharp.svg"
     },
     {
         "name": ".NET",
@@ -58,6 +54,30 @@
     {
         "name": ".NET Core",
         "imagePath": "assets/svg/skills/dotnetcore.svg"
+    },
+    {
+        "name": "C#",
+        "imagePath": "assets/svg/skills/csharp.svg"
+    },
+    {
+        "name": "F#",
+        "imagePath": "assets/svg/skills/fsharp.svg"
+    },
+    {
+        "name": "VBA",
+        "imagePath": "assets/svg/skills/vba.svg"
+    },
+    {
+        "name": "VB.NET",
+        "imagePath": "assets/svg/skills/vbnet.svg"
+    },
+    {
+        "name": "Blazor",
+        "imagePath": "assets/svg/skills/blazor.svg"
+    },
+    {
+        "name": "ThreeJs",
+        "imagePath": "assets/svg/skills/threejs.svg"
     },
     {
         "name": "Linux",
@@ -86,5 +106,33 @@
     {
         "name": "DevExpress",
         "imagePath": "assets/svg/skills/devexpress.svg"
+    },
+    {
+        "name": "DevExtreme",
+        "imagePath": "assets/svg/skills/devextreme.svg"
+    },
+    {
+        "name": "Kendo",
+        "imagePath": "assets/svg/skills/kendo.svg"
+    },
+    {
+        "name": "Telerik",
+        "imagePath": "assets/svg/skills/telerik.svg"
+    },
+    {
+        "name": "HighCharts",
+        "imagePath": "assets/svg/skills/highcharts.svg"
+    },
+    {
+        "name": "QBO",
+        "imagePath": "assets/svg/skills/qbo.svg"
+    },
+    {
+        "name": "Xero",
+        "imagePath": "assets/svg/skills/xero.svg"
+    },
+    {
+        "name": "Stripe",
+        "imagePath": "assets/svg/skills/stripe.svg"
     }
 ]
