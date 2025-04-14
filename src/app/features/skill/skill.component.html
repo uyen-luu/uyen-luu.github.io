@@ -37,6 +37,7 @@
           --iteration-count: infinite;
           --min-width: 100%;
         "
+        [ngStyle]="{ '--duration': duration + 's' }"
       >
         <div
           *ngFor="let item of skills"

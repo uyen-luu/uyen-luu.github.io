@@ -16,6 +16,7 @@ import { DataService } from '@app/core/services';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SkillComponent implements OnInit {
+  duration: number = 1;
   constructor(
     private _dataService: DataService,
     private _ref: ChangeDetectorRef
@@ -24,6 +25,7 @@ export class SkillComponent implements OnInit {
   ngOnInit(): void {
     this._dataService.getSkills().subscribe((res) => {
       this.skills = res;
+      this.duration = this.skills.length;
       this._ref.markForCheck();
     });
   }
