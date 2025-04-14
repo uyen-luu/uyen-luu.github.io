@@ -134,5 +134,125 @@
     {
         "name": "Stripe",
         "imagePath": "assets/svg/skills/stripe.svg"
+    },
+    {
+        "name": "Twilio",
+        "imagePath": "assets/svg/skills/twilio.svg"
+    },
+    {
+        "name": "Redis",
+        "imagePath": "assets/svg/skills/redis.svg"
+    },
+    {
+        "name": "Gh Actions",
+        "imagePath": "assets/svg/skills/github_action.svg"
+    },
+    {
+        "name": "FedEx",
+        "imagePath": "assets/svg/skills/fedex.svg"
+    },
+    {
+        "name": "Bulk SMS",
+        "imagePath": "assets/svg/skills/bulksms.svg"
+    },
+    {
+        "name": "BrowserStack",
+        "imagePath": "assets/svg/skills/browserstack.svg"
+    },
+    {
+        "name": "Web Jobs",
+        "imagePath": "assets/svg/skills/azure_web-jobs.svg"
+    },
+    {
+        "name": "vNet",
+        "imagePath": "assets/svg/skills/azure_virtual-networks.svg"
+    },
+    {
+        "name": "VM",
+        "imagePath": "assets/svg/skills/azure_virtual-machine.svg"
+    },
+    {
+        "name": "Storage",
+        "imagePath": "assets/svg/skills/azure_storage-account.svg"
+    },
+    {
+        "name": "Azure SQL",
+        "imagePath": "assets/svg/skills/azure_sql.svg"
+    },
+    {
+        "name": "Open AI",
+        "imagePath": "assets/svg/skills/azure_open-ai.svg"
+    },
+    {
+        "name": "Keyvault",
+        "imagePath": "assets/svg/skills/azure_keyvaults.svg"
+    },
+    {
+        "name": "Function",
+        "imagePath": "assets/svg/skills/azure_function.svg"
+    },
+    {
+        "name": "FormRecognizers",
+        "imagePath": "assets/svg/skills/azure_form-recognizers.svg"
+    },
+    {
+        "name": "DNS Zone",
+        "imagePath": "assets/svg/skills/azure_dns-zone.svg"
+    },
+    {
+        "name": "DevOps",
+        "imagePath": "assets/svg/skills/azure_devops.svg"
+    },
+    {
+        "name": "CosmosDB",
+        "imagePath": "assets/svg/skills/azure_cosmosdb.svg"
+    },
+    {
+        "name": "Registry",
+        "imagePath": "assets/svg/skills/azure_container-registry.svg"
+    },
+    {
+        "name": "Vision",
+        "imagePath": "assets/svg/skills/azure_computer-vision.svg"
+    },
+    {
+        "name": "Automation",
+        "imagePath": "assets/svg/skills/azure_automation.svg"
+    },
+    {
+        "name": "Service",
+        "imagePath": "assets/svg/skills/azure_app-service.svg"
+    },
+    {
+        "name": "Registrations",
+        "imagePath": "assets/svg/skills/azure_app-registrations.svg"
+    },
+    {
+        "name": "Insights",
+        "imagePath": "assets/svg/skills/azure_app-insights.svg"
+    },
+    {
+        "name": "Gateway",
+        "imagePath": "assets/svg/skills/azure_app-gateway.svg"
+    },
+    {
+        "name": "AI Search",
+        "imagePath": "assets/svg/skills/azure_ai-search.svg"
+    },
+    {
+        "name": "AAD B2C",
+        "imagePath": "assets/svg/skills/azure_ad-b2c.svg"
+    },
+    {
+        "name": "AAD",
+        "imagePath": "assets/svg/skills/azure_active-directory.svg"
+    },
+    {
+        "name": "PowerBI",
+        "imagePath": "assets/svg/skills/azure_power-bi.svg"
+    },
+    {
+        "name": "API",
+        "imagePath": "assets/svg/skills/azure_api-management.svg"
     }
 ]
