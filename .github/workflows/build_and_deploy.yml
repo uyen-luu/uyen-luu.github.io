@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       trigger_build:
-        description: "Should the build job run?"
+        description: "Build?"
         required: true
         default: true # Default is true, meaning build job will run unless explicitly set to false
         type: boolean
 
       trigger_deploy:
-        description: "Should the deploy job run?"
+        description: "Deploy?"
         required: true
         default: false # Default is true, meaning deploy job will run unless explicitly set to false
         type: boolean
