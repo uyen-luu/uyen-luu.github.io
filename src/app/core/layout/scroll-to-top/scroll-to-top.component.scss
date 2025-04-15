@@ -1,0 +1,18 @@
+:host {
+  .scroll-to-top-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 1.5rem;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 9999px;
+    background: linear-gradient(to right, #ec4899, #8b5cf6);
+    // transition: all 0.3s ease-out;
+  }
+
+//   .scroll-to-top-btn:hover {
+//     font-size: 1.25rem;
+//   }
+}

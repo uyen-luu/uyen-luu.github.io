@@ -21,7 +21,6 @@ on:
 
   push:
     branches:
-      - main
       - dev
       - feature/*
     paths:
@@ -32,16 +31,12 @@ on:
 
 env:
   WORKING_DIRECTORY: ./
-  ARTIFACT_NAME: ul-portfolio
   OUTPUT_PATH: dist/ul-portfolio/browser
 
 jobs:
   build:
     if: github.event_name != 'workflow_dispatch' || github.event.inputs.trigger_build == 'true' # Runs if triggered manually or input is true
     runs-on: ubuntu-latest
-
-    outputs:
-      artifact-name: ${{ env.ARTIFACT_NAME }}
 
     steps:
       - name: Checkout code
@@ -54,52 +49,41 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
+        id: install
         run: npm install
         working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Build Angular app
+        id: build
         run: npm run build
         working-directory: ${{ env.WORKING_DIRECTORY }}
       
       - name: Clone index.html to 404.html for Angular 17+
+        id: copy
         run: cp ${{ env.OUTPUT_PATH }}/index.html ${{ env.OUTPUT_PATH }}/404.html
         working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: ${{ env.ARTIFACT_NAME }}
-          path: dist/
-          retention-days: 7
+          path: ${{ env.OUTPUT_PATH }}
 
   deploy:
     if: >
       (github.event_name == 'workflow_dispatch' && github.event.inputs.trigger_deploy == 'true') ||
       (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true)
-
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build # Ensures deploy happens only after the build
 
     permissions:
-      contents: write # This gives write access to repository contents (enabling pushing to gh-pages)
-      pull-requests: write # This can be useful if you need PR permissions as well (optional)
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: ${{ env.ARTIFACT_NAME }}
-          path: dist/
-
-      - name: Debug dist folder
-        run: ls -R dist/
-
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: ${{ env.OUTPUT_PATH }}
-          clean: true # Ensure previous deployment folder is cleaned up before deployment
-          force: true # Force push the changes even if there are conflicts
+        id: deployment
+        uses: actions/deploy-pages@v4

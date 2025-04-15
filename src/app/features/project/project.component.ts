@@ -26,7 +26,6 @@ export class ProjectComponent implements OnInit {
   ngOnInit(): void {
     this._dataService.getProjects().subscribe((res) => {
       this.projects = res;
-      console.log(res);
       this._ref.markForCheck();
     });
   }
