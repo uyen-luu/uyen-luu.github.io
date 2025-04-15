@@ -64,8 +64,17 @@
                   ></i>
                 </div>
                 <div>
-                  <p class="text-base sm:text-xl mb-2 font-medium uppercase">
+                  <p
+                    class="text-base sm:text-xl mb-2 font-medium uppercase relative"
+                  >
                     {{ item.title }}
+                    <a
+                      *ngIf="!!item.url"
+                      [href]="item.url"
+                      target="_blank"
+                      class="cursor-pointer absolute ml-2 hover:text-[#16f2b3] hover:scale-110"
+                      ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                    ></a>
                   </p>
                   <p class="text-sm sm:text-base">{{ item.organization }}</p>
                 </div>
