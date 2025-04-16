@@ -15,12 +15,9 @@ on:
         default: false # Default is true, meaning deploy job will run unless explicitly set to false
         type: boolean
 
-  pull_request:
-    types:
-      - closed # Run when PR is merged
-
   push:
     branches:
+      - main
       - dev
       - feature/*
     paths:
@@ -45,7 +42,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20.x"
+          node-version: "22.x"
           registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
@@ -60,8 +57,11 @@ jobs:
       
       - name: Clone index.html to 404.html for Angular 17+
         id: copy
-        run: cp ${{ env.OUTPUT_PATH }}/index.html ${{ env.OUTPUT_PATH }}/404.html
+        run: |
+          cp ${{ env.OUTPUT_PATH }}/index.html ${{ env.OUTPUT_PATH }}/404.html
+          echo -e "\033[0;32mSuccessfully cloned index.html to 404.html\033[0m"
         working-directory: ${{ env.WORKING_DIRECTORY }}
+      
 
       - name: Upload build artifact
         id: deployment
@@ -72,7 +72,7 @@ jobs:
   deploy:
     if: >
       (github.event_name == 'workflow_dispatch' && github.event.inputs.trigger_deploy == 'true') ||
-      (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true)
+      (github.ref == 'main')
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
