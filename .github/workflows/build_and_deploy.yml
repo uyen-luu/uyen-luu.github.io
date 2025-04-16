@@ -57,8 +57,11 @@ jobs:
       
       - name: Clone index.html to 404.html for Angular 17+
         id: copy
-        run: cp ${{ env.OUTPUT_PATH }}/index.html ${{ env.OUTPUT_PATH }}/404.html
+        run: |
+          cp ${{ env.OUTPUT_PATH }}/index.html ${{ env.OUTPUT_PATH }}/404.html
+          echo "Successfully cloned index.html to 404.html"
         working-directory: ${{ env.WORKING_DIRECTORY }}
+      
 
       - name: Upload build artifact
         id: deployment
