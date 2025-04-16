@@ -15,12 +15,9 @@ on:
         default: false # Default is true, meaning deploy job will run unless explicitly set to false
         type: boolean
 
-  pull_request:
-    types:
-      - closed # Run when PR is merged
-
   push:
     branches:
+      - main
       - dev
       - feature/*
     paths:
@@ -72,7 +69,7 @@ jobs:
   deploy:
     if: >
       (github.event_name == 'workflow_dispatch' && github.event.inputs.trigger_deploy == 'true') ||
-      (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true)
+      (github.ref == 'main')
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
