@@ -59,7 +59,7 @@ jobs:
         id: copy
         run: |
           cp ${{ env.OUTPUT_PATH }}/index.html ${{ env.OUTPUT_PATH }}/404.html
-          echo "Successfully cloned index.html to 404.html"
+          echo -e "\033[0;32mSuccessfully cloned index.html to 404.html\033[0m"
         working-directory: ${{ env.WORKING_DIRECTORY }}
       
 
