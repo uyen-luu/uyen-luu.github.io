@@ -18,9 +18,11 @@
                 "ASP.NET Webform",
                 "ASP.NET MVC",
                 "Telerik UI controls for AJAX ASP.NET",
-                "Javascript/Bootstrap",
+                "Javascript",
+                "Bootstrap",
                 "Wordpress",
-                "Angular + Devextreme UI"
+                "Angular",
+                "Devextreme UI"
             ],
             "thirdPartyServices": [
                 "Twilio",
@@ -41,7 +43,7 @@
         "startDate": "Apr 2017",
         "endDate": "Dec 2018",
         "duration": "1 years 8 months",
-        "description": "My first real project at Enlab. In the beginning, I worked under the supervision of another more experienced colleague. After 1 month, I work independently. By the end of 2017, new members were added and I took responsibility for training them and then transferring that project to them to move to another project.",
+        "description": "My first real project: I spent the first month under supervision, quickly adapting to the work. After that, I handled the project independently until the end of 2017, then handed it over to a new team member before moving on to a new project.",
         "blog": ""
     },
     {
@@ -82,9 +84,9 @@
         "position": "Team member, team leader",
         "teamSize": "2-5",
         "startDate": "Dec 2018",
-        "endDate": "Mar 2025",
+        "endDate": "present",
         "duration": "6 years 3 months 29 days",
-        "description": "My boss bid on this project and then gave it to me to implement. The biggest challenge is that an AU team has developed this project for 2 years but cannot release it to production. I need to release it within 4 weeks to get the client's trust, and beyond that, it is a long-term contract. I met the deadline of releasing the project and then took 2 weeks more to fix/improve some matters based on the client's feedback. So far, this project has brought us a trusted client with many demands/apps. From this app's beginning, now this system has several portals for employees, customers, installers, franchise owners, and some mobile versions. Besides, as a Solution business in AU, this client also gave us some other projects, I'm not working on all of them but still contribute to these teams for solution/technical.",
+        "description": "My boss secured this project, then entrusted me with its implementation. The biggest challenge was taking over from an AU team that had spent 8 months developing it but couldn't release it. I successfully met the 2-week deadline to gain the client’s trust, followed by 2 weeks of improvements based on their feedback. This project has since built a strong, long-term relationship with the client, leading to additional demands and several portals for employees, customers, installers, and franchise owners. The client has also entrusted us with other projects, where I continue to contribute to the teams with solution and technical guidance.",
         "blog": "https://enlabsoftware.com/works/custom-software-for-procurement/flooring-carpet-procurement-system.html"
     },
     {
@@ -117,7 +119,7 @@
         "startDate": "",
         "endDate": "",
         "duration": "",
-        "description": "This is an internal project at Enlab",
+        "description": "An internal product developed and owned by Enlab",
         "blog": "https://enlabsoftware.com/works/custom-erp-software-development/eldesk-erp.html"
     },
     {
@@ -146,7 +148,7 @@
         "startDate": "",
         "endDate": "",
         "duration": "",
-        "description": "",
+        "description": "Contributed to the team during the release phase by assisting with remaining development tasks, ensuring quality control, and meeting deadlines.",
         "blog": "https://enlabsoftware.com/works/custom-software-for-procurement/procurement-and-invoicing.html"
     },
     {
@@ -175,7 +177,7 @@
         "startDate": "",
         "endDate": "",
         "duration": "",
-        "description": "",
+        "description": "Contributed as a team member in developing (full-stack) and maintaining the project.",
         "blog": "https://enlabsoftware.com/works/custom-hr-software-development/recruitment-agency-software.html"
     },
     {
@@ -196,14 +198,16 @@
             "backEnd": [
                 ".NET framework",
                 ".NET Core",
-                "Telerik reporting"
+                "Telerik reporting",
+                "ASP.NET Core API"
             ],
             "frontEnd": [
                 "ASP.NET Webform",
-                "ASP.NET Core API",
                 "Telerik UI controls for AJAX ASP.NET",
-                "Javascript/Bootstrap",
-                "Angular + Devextreme UI"
+                "Javascript",
+                "Bootstrap",
+                "Angular",
+                "Devextreme UI"
             ],
             "mobile": [
                 "Flutter"
@@ -213,12 +217,12 @@
                 "Google"
             ]
         },
-        "position": "Team member, team leader, technical supporter",
+        "position": "Team Member/Team Leader/Technical Supporter",
         "teamSize": "4-5",
         "startDate": "",
         "endDate": "",
         "duration": "",
-        "description": "",
+        "description": "I contributed to proposals and estimates, and once the project was secured, I handed it over to the designated team member responsible for the project kickoff. I later rejoined the team as needed to provide support during peak workloads",
         "blog": "https://enlabsoftware.com/works/custom-software-for-real-estate/property-management.html"
     },
     {
@@ -236,19 +240,20 @@
             ],
             "backEnd": [
                 ".NET Core",
+                "ASP.NET Core API",
                 "Telerik reporting"
             ],
             "frontEnd": [
-                "ASP.NET Core API",
-                "Angular + Devextreme UI"
+                "Angular",
+                "Devextreme UI"
             ]
         },
         "position": "Team leader",
         "teamSize": 2,
         "startDate": "May 2021",
-        "endDate": "Mar 2025",
+        "endDate": "present",
         "duration": "3 years 10 months 10 days",
-        "description": "",
+        "description": "I contributed to proposals and estimates, and have been managing and developing the project from that point to the present.",
         "blog": ""
     },
     {
@@ -292,7 +297,7 @@
         "startDate": "Dec 2019",
         "endDate": "May 2022",
         "duration": "2 years 5 months",
-        "description": "",
+        "description": "An experienced colleague obtained the project from a startup in Thailand, and I then joined him to work closely on developing and delivering it on time. After the release phase, I primarily managed the project for several years before handing it over to another team member.",
         "blog": "https://enlabsoftware.com/works/custom-software-for-data-management/hotel-revenue-management-system.html https://clutch.co/go-to-review/92e27e13-c6cf-4725-974f-d660c74c6905/38711"
     },
     {
@@ -326,7 +331,7 @@
         "startDate": "",
         "endDate": "",
         "duration": "",
-        "description": "",
+        "description": "I led the front-end team in developing web and mobile applications and occasionally contributed to the back-end team on cloud-based services, particularly during the implementation of the internal chat channel.",
         "blog": "https://enlabsoftware.com/works/marketplace/coffee-procurement-marketplace-platform.html"
     },
     {
@@ -360,7 +365,7 @@
         "startDate": "Apr 2022",
         "endDate": "Sep 2022",
         "duration": "5 months 29 days",
-        "description": "- Develop & maintain",
+        "description": "My first project at the new company involved resolving a long-standing ThreeJS issue in a legacy Angular app during my probation period. Later, I refactored the .NET Framework backend to improve maintainability and implemented a theme switcher for a UI redesign. After a year on this project, it was reallocated to the Europe branch, and I was assigned a new project.",
         "blog": ""
     },
     {
