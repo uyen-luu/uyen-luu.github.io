@@ -1,0 +1,31 @@
+<div
+  class="w-36 min-w-fit h-fit flex flex-col items-center justify-center transition-all duration-500 m-3 sm:m-5 rounded-lg group relative hover:scale-[1.15] cursor-pointer"
+>
+  <div
+    class="h-full w-full rounded-lg border border-[#1f223c] bg-[#11152c] shadow-none shadow-gray-50 group-hover:border-violet-500 transition-all duration-500"
+  >
+    <div class="flex -translate-y-[1px] justify-center">
+      <div class="w-3/4">
+        <div
+          class="h-[1px] w-full bg-gradient-to-r from-transparent via-violet-500 to-transparent"
+        ></div>
+      </div>
+    </div>
+    <div class="flex flex-col items-center justify-center gap-3 p-6">
+      <div class="h-8 sm:h-10">
+        <img
+          alt="HTML"
+          loading="lazy"
+          width="40"
+          height="40"
+          decoding="async"
+          data-nimg="1"
+          class="h-full w-auto rounded-lg"
+          [src]="item.imagePath"
+          style="color: transparent"
+        />
+      </div>
+      <p class="text-white text-sm sm:text-lg">{{ item.name }}</p>
+    </div>
+  </div>
+</div>
