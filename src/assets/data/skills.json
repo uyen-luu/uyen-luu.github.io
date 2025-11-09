@@ -254,5 +254,9 @@
     {
         "name": "API",
         "imagePath": "assets/svg/skills/azure_api-management.svg"
+    },
+    {
+        "name": "Svix",
+        "imagePath": "assets/svg/skills/svix.svg"
     }
 ]
