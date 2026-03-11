@@ -6,8 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "vitest",
+    "test": "vitest run --passWithNoTests",
     "test:ui": "vitest --ui",
+    "test:dev": "vitest",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix"
   },
