@@ -7,28 +7,26 @@ import {
 } from '@angular/core';
 import { Skill } from '@app/core/models';
 import { DataService } from '@app/core/services';
-import { groupBy } from 'lodash';
-import { SkillItemComponent } from './components';
+import { SkillItemComponent } from "../skill-item/skill-item.component";
+import { RouterLinkWithHref } from "@angular/router";
 
 @Component({
-  selector: 'app-skill',
-  imports: [CommonModule, SkillItemComponent],
-  templateUrl: './skill.component.html',
-  styleUrl: './skill.component.scss',
+  selector: 'app-skill-widget',
+  imports: [CommonModule, SkillItemComponent, RouterLinkWithHref],
+  templateUrl: './skill-widget.component.html',
+  styleUrl: './skill-widget.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SkillComponent implements OnInit {
+export class SkillWidgetComponent implements OnInit {
   duration: number = 1;
-  items: Map<string, Skill[]> = new Map<string, Skill[]>();
   constructor(
     private _dataService: DataService,
     private _ref: ChangeDetectorRef
   ) {}
   skills: Skill[] = [];
   ngOnInit(): void {
-    this._dataService.getSkills().subscribe((skills) => {
-      const grouped = groupBy(skills, 'category');
-      this.items = new Map<string, Skill[]>(Object.entries(grouped));
+    this._dataService.getSkills().subscribe((res) => {
+      this.skills = res;
       this.duration = this.skills.length;
       this._ref.markForCheck();
     });

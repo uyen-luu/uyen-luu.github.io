@@ -1,262 +1,327 @@
 [
     {
         "name": "Angular",
-        "imagePath": "assets/svg/skills/angular.svg"
+        "imagePath": "assets/svg/skills/angular.svg",
+        "category": "Frontend / UI"
     },
     {
         "name": "A. Material",
-        "imagePath": "assets/svg/skills/angular-material.svg"
+        "imagePath": "assets/svg/skills/angular-material.svg",
+        "category": "Frontend / UI"
     },
     {
         "name": "HTML",
-        "imagePath": "assets/svg/skills/html.svg"
+        "imagePath": "assets/svg/skills/html.svg",
+        "category": "Frontend / UI"
     },
     {
         "name": "CSS",
-        "imagePath": "assets/svg/skills/css.svg"
+        "imagePath": "assets/svg/skills/css.svg",
+        "category": "Frontend / UI"
     },
     {
         "name": "Javascript",
-        "imagePath": "assets/svg/skills/javascript.svg"
+        "imagePath": "assets/svg/skills/javascript.svg",
+        "category": "Frontend / UI"
     },
     {
         "name": "Typescript",
-        "imagePath": "assets/svg/skills/typescript.svg"
+        "imagePath": "assets/svg/skills/typescript.svg",
+        "category": "Frontend / UI"
     },
     {
         "name": "Tailwind",
-        "imagePath": "assets/svg/skills/tailwind.svg"
+        "imagePath": "assets/svg/skills/tailwind.svg",
+        "category": "Frontend / UI"
     },
     {
         "name": "Git",
-        "imagePath": "assets/svg/skills/git.svg"
+        "imagePath": "assets/svg/skills/git.svg",
+        "category": "Version Control / CI-CD / Dev Tools"
     },
     {
         "name": "Github",
-        "imagePath": "assets/svg/skills/github-white.svg"
+        "imagePath": "assets/svg/skills/github-white.svg",
+        "category": "Version Control / CI-CD / Dev Tools"
     },
     {
         "name": "Bootstrap",
-        "imagePath": "assets/svg/skills/bootstrap.svg"
+        "imagePath": "assets/svg/skills/bootstrap.svg",
+        "category": "Frontend / UI"
     },
     {
         "name": "Docker",
-        "imagePath": "assets/svg/skills/docker.svg"
+        "imagePath": "assets/svg/skills/docker.svg",
+        "category": "Version Control / CI-CD / Dev Tools"
     },
     {
         "name": "Azure",
-        "imagePath": "assets/svg/skills/azure.svg"
+        "imagePath": "assets/svg/skills/azure.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": ".NET",
-        "imagePath": "assets/svg/skills/dotnet.svg"
+        "imagePath": "assets/svg/skills/dotnet.svg",
+        "category": "Backend / .NET"
     },
     {
         "name": ".NET Core",
-        "imagePath": "assets/svg/skills/dotnetcore.svg"
+        "imagePath": "assets/svg/skills/dotnetcore.svg",
+        "category": "Backend / .NET"
     },
     {
         "name": "C#",
-        "imagePath": "assets/svg/skills/csharp.svg"
+        "imagePath": "assets/svg/skills/csharp.svg",
+        "category": "Backend / .NET"
     },
     {
         "name": "F#",
-        "imagePath": "assets/svg/skills/fsharp.svg"
+        "imagePath": "assets/svg/skills/fsharp.svg",
+        "category": "Backend / .NET"
     },
     {
         "name": "VBA",
-        "imagePath": "assets/svg/skills/vba.svg"
+        "imagePath": "assets/svg/skills/vba.svg",
+        "category": "Backend / .NET"
     },
     {
         "name": "VB.NET",
-        "imagePath": "assets/svg/skills/vbnet.svg"
+        "imagePath": "assets/svg/skills/vbnet.svg",
+        "category": "Backend / .NET"
     },
     {
         "name": "Blazor",
-        "imagePath": "assets/svg/skills/blazor.svg"
+        "imagePath": "assets/svg/skills/blazor.svg",
+        "category": "Frontend / UI"
     },
     {
         "name": "ThreeJs",
-        "imagePath": "assets/svg/skills/threejs.svg"
+        "imagePath": "assets/svg/skills/threejs.svg",
+        "category": "Frontend / UI"
     },
     {
         "name": "Linux",
-        "imagePath": "assets/svg/skills/linux.svg"
+        "imagePath": "assets/svg/skills/linux.svg",
+        "category": "Documentation / Scripting"
     },
     {
         "name": "Markdown",
-        "imagePath": "assets/svg/skills/markdown.svg"
+        "imagePath": "assets/svg/skills/markdown.svg",
+        "category": "Documentation / Scripting"
     },
     {
         "name": "Mongo DB",
-        "imagePath": "assets/svg/skills/mongodb.svg"
+        "imagePath": "assets/svg/skills/mongodb.svg",
+        "category": "Database / Storage"
     },
     {
         "name": "Microsoft",
-        "imagePath": "assets/svg/skills/microsoft.svg"
+        "imagePath": "assets/svg/skills/microsoft.svg",
+        "category": "Payment / Integration / APIs"
     },
     {
         "name": "Google",
-        "imagePath": "assets/svg/skills/google.svg"
+        "imagePath": "assets/svg/skills/google.svg",
+        "category": "Payment / Integration / APIs"
     },
     {
         "name": "Mailgun",
-        "imagePath": "assets/svg/skills/mailgun.svg"
+        "imagePath": "assets/svg/skills/mailgun.svg",
+        "category": "Payment / Integration / APIs"
     },
     {
         "name": "DevExpress",
-        "imagePath": "assets/svg/skills/devexpress.svg"
+        "imagePath": "assets/svg/skills/devexpress.svg",
+        "category": "Frontend / UI"
     },
     {
         "name": "DevExtreme",
-        "imagePath": "assets/svg/skills/devextreme.svg"
+        "imagePath": "assets/svg/skills/devextreme.svg",
+        "category": "Frontend / UI"
     },
     {
         "name": "Kendo",
-        "imagePath": "assets/svg/skills/kendo.svg"
+        "imagePath": "assets/svg/skills/kendo.svg",
+        "category": "Frontend / UI"
     },
     {
         "name": "Telerik",
-        "imagePath": "assets/svg/skills/telerik.svg"
+        "imagePath": "assets/svg/skills/telerik.svg",
+        "category": "Frontend / UI"
     },
     {
         "name": "HighCharts",
-        "imagePath": "assets/svg/skills/highcharts.svg"
+        "imagePath": "assets/svg/skills/highcharts.svg",
+        "category": "Frontend / UI"
     },
     {
         "name": "QBO",
-        "imagePath": "assets/svg/skills/qbo.svg"
+        "imagePath": "assets/svg/skills/qbo.svg",
+        "category": "Payment / Integration / APIs"
     },
     {
         "name": "Xero",
-        "imagePath": "assets/svg/skills/xero.svg"
+        "imagePath": "assets/svg/skills/xero.svg",
+        "category": "Payment / Integration / APIs"
     },
     {
         "name": "Stripe",
-        "imagePath": "assets/svg/skills/stripe.svg"
+        "imagePath": "assets/svg/skills/stripe.svg",
+        "category": "Payment / Integration / APIs"
     },
     {
         "name": "Twilio",
-        "imagePath": "assets/svg/skills/twilio.svg"
+        "imagePath": "assets/svg/skills/twilio.svg",
+        "category": "Payment / Integration / APIs"
     },
     {
         "name": "Redis",
-        "imagePath": "assets/svg/skills/redis.svg"
+        "imagePath": "assets/svg/skills/redis.svg",
+        "category": "Database / Storage"
     },
     {
         "name": "Gh Actions",
-        "imagePath": "assets/svg/skills/github_action.svg"
+        "imagePath": "assets/svg/skills/github_action.svg",
+        "category": "Version Control / CI-CD / Dev Tools"
     },
     {
         "name": "FedEx",
-        "imagePath": "assets/svg/skills/fedex.svg"
+        "imagePath": "assets/svg/skills/fedex.svg",
+        "category": "Payment / Integration / APIs"
     },
     {
         "name": "Bulk SMS",
-        "imagePath": "assets/svg/skills/bulksms.svg"
+        "imagePath": "assets/svg/skills/bulksms.svg",
+        "category": "Payment / Integration / APIs"
     },
     {
         "name": "BrowserStack",
-        "imagePath": "assets/svg/skills/browserstack.svg"
+        "imagePath": "assets/svg/skills/browserstack.svg",
+        "category": "Version Control / CI-CD / Dev Tools"
     },
     {
         "name": "Web Jobs",
-        "imagePath": "assets/svg/skills/azure_web-jobs.svg"
+        "imagePath": "assets/svg/skills/azure_web-jobs.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "vNet",
-        "imagePath": "assets/svg/skills/azure_virtual-networks.svg"
+        "imagePath": "assets/svg/skills/azure_virtual-networks.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "VM",
-        "imagePath": "assets/svg/skills/azure_virtual-machine.svg"
+        "imagePath": "assets/svg/skills/azure_virtual-machine.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "Storage",
-        "imagePath": "assets/svg/skills/azure_storage-account.svg"
+        "imagePath": "assets/svg/skills/azure_storage-account.svg",
+        "category": "Database / Storage"
     },
     {
         "name": "Azure SQL",
-        "imagePath": "assets/svg/skills/azure_sql.svg"
+        "imagePath": "assets/svg/skills/azure_sql.svg",
+        "category": "Database / Storage"
     },
     {
         "name": "Open AI",
-        "imagePath": "assets/svg/skills/azure_open-ai.svg"
+        "imagePath": "assets/svg/skills/azure_open-ai.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "Keyvault",
-        "imagePath": "assets/svg/skills/azure_keyvaults.svg"
+        "imagePath": "assets/svg/skills/azure_keyvaults.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "Function",
-        "imagePath": "assets/svg/skills/azure_function.svg"
+        "imagePath": "assets/svg/skills/azure_function.svg",
+        "category": "Cloud / Azure"
     },
     {
-        "name": "FormRecognizers",
-        "imagePath": "assets/svg/skills/azure_form-recognizers.svg"
+        "name": "FormRec",
+        "imagePath": "assets/svg/skills/azure_form-recognizers.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "DNS Zone",
-        "imagePath": "assets/svg/skills/azure_dns-zone.svg"
+        "imagePath": "assets/svg/skills/azure_dns-zone.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "DevOps",
-        "imagePath": "assets/svg/skills/azure_devops.svg"
+        "imagePath": "assets/svg/skills/azure_devops.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "CosmosDB",
-        "imagePath": "assets/svg/skills/azure_cosmosdb.svg"
+        "imagePath": "assets/svg/skills/azure_cosmosdb.svg",
+        "category": "Database / Storage"
     },
     {
         "name": "Registry",
-        "imagePath": "assets/svg/skills/azure_container-registry.svg"
+        "imagePath": "assets/svg/skills/azure_container-registry.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "Vision",
-        "imagePath": "assets/svg/skills/azure_computer-vision.svg"
+        "imagePath": "assets/svg/skills/azure_computer-vision.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "Automation",
-        "imagePath": "assets/svg/skills/azure_automation.svg"
+        "imagePath": "assets/svg/skills/azure_automation.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "Service",
-        "imagePath": "assets/svg/skills/azure_app-service.svg"
+        "imagePath": "assets/svg/skills/azure_app-service.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "Registrations",
-        "imagePath": "assets/svg/skills/azure_app-registrations.svg"
+        "imagePath": "assets/svg/skills/azure_app-registrations.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "Insights",
-        "imagePath": "assets/svg/skills/azure_app-insights.svg"
+        "imagePath": "assets/svg/skills/azure_app-insights.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "Gateway",
-        "imagePath": "assets/svg/skills/azure_app-gateway.svg"
+        "imagePath": "assets/svg/skills/azure_app-gateway.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "AI Search",
-        "imagePath": "assets/svg/skills/azure_ai-search.svg"
+        "imagePath": "assets/svg/skills/azure_ai-search.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "AAD B2C",
-        "imagePath": "assets/svg/skills/azure_ad-b2c.svg"
+        "imagePath": "assets/svg/skills/azure_ad-b2c.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "AAD",
-        "imagePath": "assets/svg/skills/azure_active-directory.svg"
+        "imagePath": "assets/svg/skills/azure_active-directory.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "PowerBI",
-        "imagePath": "assets/svg/skills/azure_power-bi.svg"
+        "imagePath": "assets/svg/skills/azure_power-bi.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "API",
-        "imagePath": "assets/svg/skills/azure_api-management.svg"
+        "imagePath": "assets/svg/skills/azure_api-management.svg",
+        "category": "Cloud / Azure"
     },
     {
         "name": "Svix",
-        "imagePath": "assets/svg/skills/svix.svg"
+        "imagePath": "assets/svg/skills/svix.svg",
+        "category": "Payment / Integration / APIs"
     }
 ]
