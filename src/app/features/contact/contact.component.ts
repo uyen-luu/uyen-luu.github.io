@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -11,7 +11,7 @@ import { DataService } from '@app/core/services';
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

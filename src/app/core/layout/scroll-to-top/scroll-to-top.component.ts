@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -8,7 +8,7 @@ import {
 
 @Component({
   selector: 'app-scroll-to-top',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './scroll-to-top.component.html',
   styleUrl: './scroll-to-top.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

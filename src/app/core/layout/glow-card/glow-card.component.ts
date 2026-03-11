@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {
   Component,
   ElementRef,
@@ -13,7 +13,7 @@ import {
   selector: 'app-glow-card',
   templateUrl: './glow-card.component.html',
   styleUrls: ['./glow-card.component.scss'],
-  imports: [CommonModule],
+  imports: [],
 })
 export class GlowCardComponent implements AfterViewInit, OnDestroy {
   @Input() identifier!: string;

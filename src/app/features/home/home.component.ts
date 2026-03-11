@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { AboutComponent } from '../about/about.component';
 import { ExperienceComponent } from '../experience/experience.component';
@@ -14,7 +14,6 @@ import { SkillWidgetComponent } from '@app/features/skill/components';
 @Component({
   selector: 'app-home',
   imports: [
-    CommonModule,
     BioComponent,
     AboutComponent,
     ExperienceComponent,
@@ -22,8 +21,8 @@ import { SkillWidgetComponent } from '@app/features/skill/components';
     ProjectComponent,
     EducationComponent,
     ContactComponent,
-    CertificationComponent,
-  ],
+    CertificationComponent
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

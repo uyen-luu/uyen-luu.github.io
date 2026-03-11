@@ -12,27 +12,27 @@
   <div class="flex justify-center my-5 lg:py-8">
     <div class="flex items-center">
       <span class="w-24 h-[2px] bg-[#1a1443]"></span
-      ><span class="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md"
+        ><span class="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md"
         >Skills
         <a
           class="cursor-pointer absolute ml-2 hover:text-[#16f2b3] hover:scale-110"
           [routerLink]="['skills']"
           ><i class="fa-solid fa-arrow-up-right-from-square"></i></a></span
-      ><span class="w-24 h-[2px] bg-[#1a1443]"></span>
-    </div>
-  </div>
-  <div class="w-full my-12">
-    <div
-      class="rfm-marquee-container"
+          ><span class="w-24 h-[2px] bg-[#1a1443]"></span>
+        </div>
+      </div>
+      <div class="w-full my-12">
+        <div
+          class="rfm-marquee-container"
       style="
         --pause-on-hover: paused;
         --pause-on-click: paused;
         --width: 100%;
         --transform: none;
       "
-    >
-      <div
-        class="rfm-marquee"
+          >
+          <div
+            class="rfm-marquee"
         style="
           --play: running;
           --direction: normal;
@@ -41,16 +41,17 @@
           --iteration-count: infinite;
           --min-width: 100%;
         "
-        [ngStyle]="{ '--duration': duration + 's' }"
-      >
-        <div
-          *ngFor="let item of skills"
-          class="rfm-child"
-          style="--transform: none"
-        >
-          <app-skill-item [item]="item"></app-skill-item>
+            [ngStyle]="{ '--duration': duration + 's' }"
+            >
+            @for (item of skills; track item) {
+              <div
+                class="rfm-child"
+                style="--transform: none"
+                >
+                <app-skill-item [item]="item"></app-skill-item>
+              </div>
+            }
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>

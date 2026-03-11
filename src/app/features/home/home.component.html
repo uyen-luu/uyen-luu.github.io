@@ -1,7 +1,9 @@
-<ng-container *ngIf="!!personalData">
+@if (!!personalData) {
   <app-bio [personalData]="personalData"></app-bio>
-  <app-about *ngIf="!!personalData" [personal]="personalData"></app-about>
-</ng-container>
+  @if (!!personalData) {
+    <app-about [personal]="personalData"></app-about>
+  }
+}
 
 <app-experience></app-experience>
 <app-certification></app-certification>

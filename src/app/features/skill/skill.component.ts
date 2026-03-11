@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -12,7 +12,7 @@ import { SkillItemComponent } from './components';
 
 @Component({
   selector: 'app-skill',
-  imports: [CommonModule, SkillItemComponent],
+  imports: [SkillItemComponent],
   templateUrl: './skill.component.html',
   styleUrl: './skill.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
