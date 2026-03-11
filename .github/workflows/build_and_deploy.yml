@@ -29,6 +29,7 @@ on:
 env:
   WORKING_DIRECTORY: ./
   OUTPUT_PATH: dist/ul-portfolio/browser
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build:
