@@ -43,25 +43,30 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22.x"
-          registry-url: "https://registry.npmjs.org"
+          cache: "npm"
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
         id: install
-        run: npm install
+        run: npm ci
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+
+      - name: Run lint
+        id: lint
+        run: npm run lint
         working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Build Angular app
         id: build
         run: npm run build
         working-directory: ${{ env.WORKING_DIRECTORY }}
-      
+
       - name: Clone index.html to 404.html for Angular 17+
         id: copy
         run: |
           cp ${{ env.OUTPUT_PATH }}/index.html ${{ env.OUTPUT_PATH }}/404.html
           echo -e "\033[0;32mSuccessfully cloned index.html to 404.html\033[0m"
         working-directory: ${{ env.WORKING_DIRECTORY }}
-      
 
       - name: Upload build artifact
         id: deployment
@@ -80,8 +85,8 @@ jobs:
     needs: build # Ensures deploy happens only after the build
 
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
 
     steps:
       - name: Deploy to GitHub Pages
