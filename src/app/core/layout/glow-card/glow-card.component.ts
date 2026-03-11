@@ -7,6 +7,7 @@ import {
   OnDestroy,
   Renderer2,
   ViewChild,
+  inject,
 } from '@angular/core';
 
 @Component({
@@ -21,6 +22,7 @@ export class GlowCardComponent implements AfterViewInit, OnDestroy {
   @ViewChild('card', { static: true }) cardRef!: ElementRef;
 
   private pointerMoveListener?: () => void;
+  private renderer = inject(Renderer2);
   private CONFIG = {
     proximity: 40,
     spread: 80,
@@ -29,8 +31,6 @@ export class GlowCardComponent implements AfterViewInit, OnDestroy {
     vertical: false,
     opacity: 0,
   };
-
-  constructor(private renderer: Renderer2) {}
 
   ngAfterViewInit(): void {
     this.restyle();

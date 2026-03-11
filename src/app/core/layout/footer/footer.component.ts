@@ -4,6 +4,7 @@ import {
   ChangeDetectorRef,
   Component,
   OnInit,
+  inject,
 } from '@angular/core';
 import { PersonalData } from '@app/core/models';
 import { DataService } from '@app/core/services';
@@ -18,10 +19,8 @@ import { DataService } from '@app/core/services';
 export class FooterComponent implements OnInit {
   currentYear!: string;
   personal!: PersonalData;
-  constructor(
-    private _dataService: DataService,
-    private _ref: ChangeDetectorRef
-  ) {}
+  private _dataService = inject(DataService);
+  private _ref = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
     this.currentYear = new Date().getFullYear().toString();

@@ -5,6 +5,7 @@ import {
   HostListener,
   Input,
   OnInit,
+  inject,
 } from '@angular/core';
 
 @Directive({
@@ -13,6 +14,9 @@ import {
 })
 export class GlowDirective implements OnInit {
   @Input() identifier = '';
+
+  private el = inject(ElementRef);
+  private _ref = inject(ChangeDetectorRef);
 
   private config = {
     proximity: 40,
@@ -23,8 +27,6 @@ export class GlowDirective implements OnInit {
     opacity: 0,
   };
 
-  constructor(private el: ElementRef, private _ref: ChangeDetectorRef) {}
-
   ngOnInit() {
     const container = this.el.nativeElement;
     container.style.setProperty('--gap', this.config.gap.toString());
@@ -34,7 +36,6 @@ export class GlowDirective implements OnInit {
       '--direction',
       this.config.vertical ? 'column' : 'row'
     );
-    container.class
   }
 
   @HostListener('document:mousemove', ['$event'])

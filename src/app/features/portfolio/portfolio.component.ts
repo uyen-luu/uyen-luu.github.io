@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Card, Tag } from '@app/core/models';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
@@ -11,6 +11,8 @@ import { ProjectCardComponent } from './components/project-card/project-card.com
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PortfolioComponent {
+  private titleService = inject(Title);
+
   projects: Card[] = [
     {
       id: 1,
@@ -399,7 +401,7 @@ export class PortfolioComponent {
     },
   ];
 
-  constructor(private titleService: Title) {
+  constructor() {
     this.titleService.setTitle('BC | Portfolio');
   }
 

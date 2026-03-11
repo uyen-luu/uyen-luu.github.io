@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { PersonalData } from '@app/core/models';
 
@@ -11,7 +11,9 @@ import { PersonalData } from '@app/core/models';
 })
 export class AboutComponent {
   @Input() personal!: PersonalData;
-  constructor(private titleService: Title) {
+  private titleService = inject(Title);
+
+  constructor() {
     this.titleService.setTitle('UL | About');
   }
 }
