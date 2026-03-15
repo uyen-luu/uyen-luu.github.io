@@ -1,4 +1,3 @@
-
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -8,8 +7,8 @@ import {
 } from '@angular/core';
 import { Skill } from '@app/core/models';
 import { DataService } from '@app/core/services';
-import { groupBy } from 'lodash';
 import { SkillItemComponent } from './components';
+import { groupBy } from 'lodash-es';
 
 @Component({
   selector: 'app-skill',
