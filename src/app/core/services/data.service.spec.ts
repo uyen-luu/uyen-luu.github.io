@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { DataService } from './data.service';
-import { TechStacks } from '../models';
+import { Project, TechStacks } from '../models';
 
 describe('DataService', () => {
   let service: DataService;
@@ -32,7 +32,7 @@ describe('DataService', () => {
         },
       ];
 
-      let result: any[] = [];
+      let result: Project[] = [];
       service.getProjects().subscribe((p) => (result = p));
 
       httpMock.expectOne('assets/data/projects.json').flush(raw);
@@ -52,7 +52,7 @@ describe('DataService', () => {
         },
       ];
 
-      let result: any[] = [];
+      let result: Project[] = [];
       service.getProjects().subscribe((p) => (result = p));
 
       httpMock.expectOne('assets/data/projects.json').flush(raw);
@@ -64,7 +64,7 @@ describe('DataService', () => {
     it('falls back to an empty TechStacks when techStacks is missing', () => {
       const raw = [{ id: 3, name: 'No Tech', techStacks: null }];
 
-      let result: any[] = [];
+      let result: Project[] = [];
       service.getProjects().subscribe((p) => (result = p));
 
       httpMock.expectOne('assets/data/projects.json').flush(raw);
