@@ -3,6 +3,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { DataService } from './data.service';
 import { Project, TechStacks } from '../models';
+import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 describe('DataService', () => {
   let service: DataService;

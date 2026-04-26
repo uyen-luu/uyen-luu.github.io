@@ -1,4 +1,5 @@
 import { Tag } from './tags';
+import { expect, describe, it } from 'vitest';
 
 describe('Tag', () => {
   it('toString returns the display name', () => {

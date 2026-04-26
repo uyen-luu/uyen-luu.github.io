@@ -1,5 +1,6 @@
 import { GlowCard } from './card.model';
 import { TechStacks } from './index';
+import { describe, expect, it } from 'vitest';
 
 describe('TechStacks', () => {
   it('creates with no arguments leaving fields undefined', () => {
