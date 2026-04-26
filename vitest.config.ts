@@ -18,7 +18,7 @@ export default defineConfig({
     passWithNoTests: true,
     setupFiles: ['src/test-setup.ts'],
     include: ['src/**/*.spec.ts'],
-    reporters: ['verbose'],
+    reporters: ['verbose', 'github-actions'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html', 'lcov'],
