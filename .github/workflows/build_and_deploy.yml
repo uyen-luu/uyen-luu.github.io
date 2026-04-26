@@ -22,9 +22,6 @@ on:
       - feature/*
     paths:
       - src/**
-      - *.ts
-      - *.js
-      - *.json
       - package.json
       - package-lock.json
       - .github/workflows/**
