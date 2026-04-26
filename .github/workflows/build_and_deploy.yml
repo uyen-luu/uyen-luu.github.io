@@ -26,15 +26,20 @@ on:
       - package-lock.json
       - .github/workflows/**
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
-  WORKING_DIRECTORY: ./
   OUTPUT_PATH: dist/ul-portfolio/browser
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build:
     if: github.event_name != 'workflow_dispatch' || github.event.inputs.trigger_build == 'true' # Runs if triggered manually or input is true
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./
 
     steps:
       - name: Checkout code
@@ -43,36 +48,31 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: "25.x"
+          node-version: "22.x"
           cache: "npm"
           cache-dependency-path: package-lock.json
 
       - name: Install dependencies
         id: install
         run: npm ci
-        working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Run lint
         id: lint
         run: npm run lint
-        working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Run tests
         id: test
         run: npm test
-        working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Build Angular app
         id: build
         run: npm run build
-        working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Clone index.html to 404.html for Angular 17+
         id: copy
         run: |
           cp ${{ env.OUTPUT_PATH }}/index.html ${{ env.OUTPUT_PATH }}/404.html
           echo -e "\033[0;32mSuccessfully cloned index.html to 404.html\033[0m"
-        working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Upload build artifact
         id: deployment
