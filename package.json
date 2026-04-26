@@ -50,7 +50,6 @@
     "vitest": "^4.0.18"
   },
   "overrides": {
-    "undici": "7.24.3",
     "typescript": "^6.0.3"
   }
 }
