@@ -2,7 +2,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "src",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
@@ -21,16 +20,16 @@
     "useDefineForClassFields": false,
     "paths": {
       "@app/*": [
-        "app/*"
+        "./src/app/*"
       ],
       "@layout": [
-        "app/core/layout/*"
+        "./src/app/core/layout/*"
       ],
       "@environment/*": [
-        "environments/*.ts"
+        "./src/environments/*.ts"
       ],
       "@assets/*": [
-        "assets/*"
+        "./src/assets/*"
       ]
     },
     "resolveJsonModule": true
