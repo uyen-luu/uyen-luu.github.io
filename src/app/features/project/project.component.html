@@ -1,5 +1,5 @@
 <div id="projects" class="relative z-50 my-12 lg:my-24">
-  <div class="sticky top-10">
+  <div class="sticky top-10" #stickyHeader>
     <div
       class="w-[80px] h-[80px] bg-violet-100 rounded-full absolute -top-3 left-0 translate-x-1/2 filter blur-3xl opacity-30"
     ></div>
@@ -14,7 +14,7 @@
       <div class="flex flex-col gap-6">
         @for (project of projects; track project; let i = $index) {
           <div
-            [style]="'top: calc(' + (i + 1) + ' * 4rem)'"
+            [style.top.px]="getCardTopPx(i)"
             class="sticky-card w-full mx-auto max-w-2xl sticky"
             >
             <div
