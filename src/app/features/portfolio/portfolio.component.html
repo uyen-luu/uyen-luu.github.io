@@ -1,14 +1,13 @@
 <mat-accordion>
   @for (project of projects; track $index) {
-    <mat-expansion-panel
-      (opened)="panelOpenState.set(true)"
-      (closed)="panelOpenState.set(false)"
-    >
+    <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title> {{ project.name }} </mat-panel-title>
-        <mat-panel-description
-          >{{ project.startDate }} - {{ project.endDate }}
-        </mat-panel-description>
+        @if (project.startDate && project.endDate) {
+          <mat-panel-description
+            >{{ project.startDate }} - {{ project.endDate }}
+          </mat-panel-description>
+        }
       </mat-expansion-panel-header>
       {{ project.description }}
     </mat-expansion-panel>

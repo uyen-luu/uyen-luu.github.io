@@ -3,7 +3,6 @@ import {
   ChangeDetectorRef,
   Component,
   inject,
-  signal,
 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Project } from '@app/core/models';
@@ -18,7 +17,6 @@ import { DataService } from '@app/core/services';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PortfolioComponent {
-  readonly panelOpenState = signal(false);
   projects!: Project[];
   private _dataService = inject(DataService);
   private titleService = inject(Title);
