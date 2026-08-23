@@ -8,12 +8,14 @@ import {
   Renderer2,
   ViewChild,
   inject,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 @Component({
   selector: 'app-glow-card',
   templateUrl: './glow-card.component.html',
   styleUrls: ['./glow-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [],
 })
 export class GlowCardComponent implements AfterViewInit, OnDestroy {
