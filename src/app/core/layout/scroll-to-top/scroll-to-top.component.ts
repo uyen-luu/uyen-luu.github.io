@@ -1,14 +1,15 @@
-import { CommonModule } from '@angular/common';
+
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  inject,
 } from '@angular/core';
 
 @Component({
   selector: 'app-scroll-to-top',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './scroll-to-top.component.html',
   styleUrl: './scroll-to-top.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -17,7 +18,7 @@ export class ScrollToTopComponent implements AfterViewInit {
   isVisible = false;
   readonly SCROLL_THRESHOLD = 50;
   private scrollElement: HTMLElement | null = null;
-  constructor(private _ref: ChangeDetectorRef) {}
+  private _ref = inject(ChangeDetectorRef);
   ngAfterViewInit(): void {
     this.scrollElement = document.getElementById('scrollContainer');
     if (this.scrollElement) {

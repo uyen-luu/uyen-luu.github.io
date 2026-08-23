@@ -1,29 +1,27 @@
-import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
   OnInit,
+  inject,
 } from '@angular/core';
 import { Skill } from '@app/core/models';
 import { DataService } from '@app/core/services';
-import { groupBy } from 'lodash';
 import { SkillItemComponent } from './components';
+import { groupBy } from 'lodash-es';
 
 @Component({
   selector: 'app-skill',
-  imports: [CommonModule, SkillItemComponent],
+  imports: [SkillItemComponent],
   templateUrl: './skill.component.html',
   styleUrl: './skill.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SkillComponent implements OnInit {
-  duration: number = 1;
+  private _dataService = inject(DataService);
+  private _ref = inject(ChangeDetectorRef);
+  duration = 1;
   items: Map<string, Skill[]> = new Map<string, Skill[]>();
-  constructor(
-    private _dataService: DataService,
-    private _ref: ChangeDetectorRef
-  ) {}
   skills: Skill[] = [];
   ngOnInit(): void {
     this._dataService.getSkills().subscribe((skills) => {

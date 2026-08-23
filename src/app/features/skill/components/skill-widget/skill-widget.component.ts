@@ -4,6 +4,7 @@ import {
   ChangeDetectorRef,
   Component,
   OnInit,
+  inject,
 } from '@angular/core';
 import { Skill } from '@app/core/models';
 import { DataService } from '@app/core/services';
@@ -18,11 +19,9 @@ import { RouterLinkWithHref } from "@angular/router";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SkillWidgetComponent implements OnInit {
-  duration: number = 1;
-  constructor(
-    private _dataService: DataService,
-    private _ref: ChangeDetectorRef
-  ) {}
+  duration = 1;
+  private _dataService = inject(DataService);
+  private _ref = inject(ChangeDetectorRef);
   skills: Skill[] = [];
   ngOnInit(): void {
     this._dataService.getSkills().subscribe((res) => {

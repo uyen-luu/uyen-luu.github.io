@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -9,7 +9,9 @@ import { Title } from '@angular/platform-browser';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NotFoundComponent {
-  constructor(private titleService: Title) {
+  private titleService = inject(Title);
+
+  constructor() {
     this.titleService.setTitle('BC | NotFound')
   }
 }

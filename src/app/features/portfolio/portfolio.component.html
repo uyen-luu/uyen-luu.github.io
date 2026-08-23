@@ -1,11 +1,16 @@
-<div class="align-items-center default-container">
-    <div class="content col-lg-8">
-        <div class="row">
-            @for(project of projects; track project.id) {
-                <div class="col-lg-4 col-md-6 mb-4" style="max-width: 390px; min-width: 390px">
-                    <app-project-card [card]="project"></app-project-card>
-                </div>
-            }
-        </div>
-    </div>
-</div>
+<mat-accordion>
+  @for (project of projects; track $index) {
+    <mat-expansion-panel
+      (opened)="panelOpenState.set(true)"
+      (closed)="panelOpenState.set(false)"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title> {{ project.name }} </mat-panel-title>
+        <mat-panel-description
+          >{{ project.startDate }} - {{ project.endDate }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      {{ project.description }}
+    </mat-expansion-panel>
+  }
+</mat-accordion>

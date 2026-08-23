@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import {
@@ -17,8 +17,7 @@ import {
 })
 export class DataService {
   private basePath = 'assets/data/';
-
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
   getEducations(): Observable<Education[]> {
     return this.http.get<Education[]>(`${this.basePath}educations.json`);
@@ -36,7 +35,7 @@ export class DataService {
     return this.http.get<Project[]>(`${this.basePath}projects.json`).pipe(
       map((items) => {
         items.forEach((item) => {
-          if (!!item.techStacks) {
+          if (item.techStacks) {
             item.techStacks.all = Object.entries(item.techStacks)
               .filter(([key]) => key !== 'all') // Exclude "all" itself
               .flatMap(([, value]) => (Array.isArray(value) ? value : []));

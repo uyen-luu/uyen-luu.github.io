@@ -19,10 +19,9 @@ import { GlowCard } from '@app/core/models';
 export class AchievementPannelComponent implements OnInit {
   @Input() title!: string;
   @Input() items!: GlowCard[];
-  @Input() animationData!: any;
+  @Input() animationData!: object;
   @Input() icon?: string;
   animationOptions!: AnimationOptions;
-  constructor() {}
   ngOnInit(): void {
     this.animationOptions = {
       loop: true,

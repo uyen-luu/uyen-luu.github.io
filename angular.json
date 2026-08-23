@@ -31,7 +31,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular/build:application",
           "options": {
             "outputPath": {
               "base": "dist/ul-portfolio"
@@ -82,7 +82,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "ul-portfolio:build:production"
@@ -94,34 +94,30 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "@angular/build:extract-i18n",
           "options": {
             "buildTarget": "ul-portfolio:build"
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@analogjs/vitest-angular:test"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": "c8024f38-34fd-4f3d-aab1-fa175bd4b115"
+    "analytics": "c8024f38-34fd-4f3d-aab1-fa175bd4b115",
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   }
 }

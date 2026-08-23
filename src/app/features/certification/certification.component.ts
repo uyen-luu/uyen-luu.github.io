@@ -3,6 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
   OnInit,
+  inject,
 } from '@angular/core';
 import { AchievementPannelComponent } from '@app/core/layout/achievement-pannel/achievement-pannel.component';
 import { GlowCard } from '@app/core/models';
@@ -18,10 +19,8 @@ import lottieFile from '@assets/lottie/cert.json';
 export class CertificationComponent implements OnInit {
   items!: GlowCard[];
   animationData = lottieFile;
-  constructor(
-    private _dataService: DataService,
-    private _ref: ChangeDetectorRef
-  ) {}
+  private _dataService = inject(DataService);
+  private _ref = inject(ChangeDetectorRef);
   ngOnInit(): void {
     this._dataService.getCerts().subscribe((res) => {
       this.items = res;

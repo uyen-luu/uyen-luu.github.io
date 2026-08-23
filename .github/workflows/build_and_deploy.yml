@@ -26,46 +26,57 @@ on:
       - package-lock.json
       - .github/workflows/**
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
-  WORKING_DIRECTORY: ./
   OUTPUT_PATH: dist/ul-portfolio/browser
 
 jobs:
   build:
     if: github.event_name != 'workflow_dispatch' || github.event.inputs.trigger_build == 'true' # Runs if triggered manually or input is true
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: "22.x"
-          registry-url: "https://registry.npmjs.org"
+          cache: "npm"
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
         id: install
-        run: npm install
-        working-directory: ${{ env.WORKING_DIRECTORY }}
+        run: npm ci
+
+      - name: Run lint
+        id: lint
+        run: npm run lint
+
+      - name: Run tests
+        id: test
+        run: npm test
 
       - name: Build Angular app
         id: build
         run: npm run build
-        working-directory: ${{ env.WORKING_DIRECTORY }}
-      
+
       - name: Clone index.html to 404.html for Angular 17+
         id: copy
         run: |
           cp ${{ env.OUTPUT_PATH }}/index.html ${{ env.OUTPUT_PATH }}/404.html
           echo -e "\033[0;32mSuccessfully cloned index.html to 404.html\033[0m"
-        working-directory: ${{ env.WORKING_DIRECTORY }}
-      
 
       - name: Upload build artifact
         id: deployment
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ${{ env.OUTPUT_PATH }}
 
@@ -80,8 +91,8 @@ jobs:
     needs: build # Ensures deploy happens only after the build
 
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
 
     steps:
       - name: Deploy to GitHub Pages

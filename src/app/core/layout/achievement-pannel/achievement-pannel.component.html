@@ -1,7 +1,7 @@
 <div
   id="experience"
   class="relative z-50 border-t my-12 lg:my-24 border-[#25213b]"
->
+  >
   <img
     alt="Hero"
     loading="lazy"
@@ -12,77 +12,80 @@
     class="absolute top-0 -z-10"
     style="color: transparent"
     src="assets/images/section.svg"
-  />
-  <div class="flex justify-center my-5 lg:py-8">
-    <div class="flex items-center">
-      <span class="w-24 h-[2px] bg-[#1a1443]"></span
-      ><span
-        class="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md"
-        >{{ title }}</span
-      ><span class="w-24 h-[2px] bg-[#1a1443]"></span>
-    </div>
-  </div>
-  <div class="py-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-      <div class="flex justify-center items-start">
-        <div class="w-full h-full">
-          <ng-lottie [options]="animationOptions" width=" 95%"></ng-lottie>
+    />
+    <div class="flex justify-center my-5 lg:py-8">
+      <div class="flex items-center">
+        <span class="w-24 h-[2px] bg-[#1a1443]"></span
+          ><span
+          class="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md"
+          >{{ title }}</span
+          ><span class="w-24 h-[2px] bg-[#1a1443]"></span>
         </div>
       </div>
-      <div>
-        <div class="flex flex-col gap-6">
-          <app-glow-card
-            *ngFor="let item of items; let i = index"
-            [identifier]="'experience-' + item.id.toString()"
-          >
-            <div class="p-3 relative">
-              <img
-                alt="Hero"
-                loading="lazy"
-                width="1080"
-                height="200"
-                decoding="async"
-                data-nimg="1"
-                class="absolute bottom-0 opacity-80"
-                style="color: transparent"
-                src="assets/images/blur-23.svg"
-              />
-              <div class="flex justify-center">
-                <p class="text-xs sm:text-sm text-[#16f2b3]">
-                  {{ item.duration }}
-                </p>
-              </div>
-              <div class="flex items-center gap-x-8 px-3 py-5">
-                <div
-                  class="text-violet-500 transition-all duration-300 hover:scale-125"
-                >
-                  <i
-                    *ngIf="!!icon"
-                    [ngClass]="icon"
-                    class="text-[36px] text-current"
-                    aria-hidden="true"
-                  ></i>
-                </div>
-                <div>
-                  <p
-                    class="text-base sm:text-xl mb-2 font-medium uppercase relative"
+      <div class="py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+          <div class="flex justify-center items-start">
+            <div class="w-full h-full">
+              <ng-lottie [options]="animationOptions" width=" 95%"></ng-lottie>
+            </div>
+          </div>
+          <div>
+            <div class="flex flex-col gap-6">
+              @for (item of items; track item; let i = $index) {
+                <app-glow-card
+                  [identifier]="'experience-' + item.id.toString()"
                   >
-                    {{ item.title }}
-                    <a
-                      *ngIf="!!item.url"
-                      [href]="item.url"
-                      target="_blank"
-                      class="cursor-pointer absolute ml-2 hover:text-[#16f2b3] hover:scale-110"
-                      ><i class="fa-solid fa-arrow-up-right-from-square"></i
-                    ></a>
-                  </p>
-                  <p class="text-sm sm:text-base">{{ item.organization }}</p>
-                </div>
+                  <div class="p-3 relative">
+                    <img
+                      alt="Hero"
+                      loading="lazy"
+                      width="1080"
+                      height="200"
+                      decoding="async"
+                      data-nimg="1"
+                      class="absolute bottom-0 opacity-80"
+                      style="color: transparent"
+                      src="assets/images/blur-23.svg"
+                      />
+                      <div class="flex justify-center">
+                        <p class="text-xs sm:text-sm text-[#16f2b3]">
+                          {{ item.duration }}
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-x-8 px-3 py-5">
+                        <div
+                          class="text-violet-500 transition-all duration-300 hover:scale-125"
+                          >
+                          @if (!!icon) {
+                            <i
+                              [ngClass]="icon"
+                              class="text-[36px] text-current"
+                              aria-hidden="true"
+                            ></i>
+                          }
+                        </div>
+                        <div>
+                          <p
+                            class="text-base sm:text-xl mb-2 font-medium uppercase relative"
+                            >
+                            {{ item.title }}
+                            @if (!!item.url) {
+                              <a
+                                [href]="item.url"
+                                target="_blank"
+                                class="cursor-pointer absolute ml-2 hover:text-[#16f2b3] hover:scale-110"
+                                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                              ></a>
+                            }
+                          </p>
+                          <p class="text-sm sm:text-base">{{ item.organization }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </app-glow-card>
+                }
               </div>
             </div>
-          </app-glow-card>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>

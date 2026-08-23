@@ -1,9 +1,10 @@
-import { CommonModule } from '@angular/common';
+
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
   OnInit,
+  inject,
 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { PersonalData } from '@app/core/models';
@@ -11,18 +12,18 @@ import { DataService } from '@app/core/services';
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactComponent implements OnInit {
   contact!: PersonalData;
-  constructor(
-    private titleService: Title,
-    private _dataService: DataService,
-    private _ref: ChangeDetectorRef
-  ) {
+  private titleService = inject(Title);
+  private _dataService = inject(DataService);
+  private _ref = inject(ChangeDetectorRef);
+
+  constructor() {
     this.titleService.setTitle('UL | Contact');
   }
   ngOnInit(): void {

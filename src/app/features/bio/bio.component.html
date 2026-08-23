@@ -1,6 +1,6 @@
 <section
   class="relative flex flex-col items-center justify-between py-4 lg:py-12"
->
+  >
   <img
     alt="Hero"
     loading="lazy"
@@ -11,115 +11,122 @@
     class="absolute -top-[98px] -z-10"
     style="color: transparent"
     src="assets/images/hero.svg"
-  />
-  <div class="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-12 gap-y-8">
-    <div
-      class="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10"
-    >
-      <h1
-        class="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]"
-      >
-        Hello, <br />This is
-        <!-- -->
-        <span class="text-pink-500">{{ personalData.name }}</span> , I'm a
-        Professional
-        <span class="text-[#16f2b3]">{{ personalData.designation }}</span
-        >.
-      </h1>
-      <div class="my-12 flex items-center gap-5">
-        <a
-          *ngFor="let item of personalData.socials"
-          target="_blank"
-          class="transition-all text-pink-500 hover:scale-125 duration-300"
-          [href]="item.uri"
+    />
+    <div class="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-12 gap-y-8">
+      <div
+        class="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10"
         >
-          <i class="text-3xl" [class]="item.icon"></i
-        ></a>
-      </div>
-      <div class="flex items-center gap-3">
-        <a
-          class="bg-gradient-to-r to-pink-500 from-violet-600 p-[1px] rounded-full transition-all duration-300 hover:from-pink-500 hover:to-violet-600"
-          href="#contact"
-          ><button
-            class="px-3 text-xs md:px-8 py-3 md:py-4 bg-[#0d1224] rounded-full border-none text-center md:text-sm font-medium uppercase tracking-wider text-[#ffff] no-underline transition-all duration-200 ease-out md:font-semibold flex items-center gap-1 hover:gap-3"
+        <h1
+          class="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]"
           >
-            <span>Contact me</span>
-            <i class="fa fa-address-book" aria-hidden="true"></i></button></a
-        ><a
-          class="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-3 md:px-8 py-3 md:py-4 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold"
-          role="button"
-          target="_blank"
-          [href]="personalData.resume"
-          ><span>Get Resume</span
-          ><i class="fa fa-download" aria-hidden="true"></i
-        ></a>
-      </div>
-    </div>
-    <div
-      class="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]"
-    >
-      <app-code-preview>
-        <code class="font-mono text-xs md:text-sm lg:text-base"
-          ><div class="blink">
-            <span class="mr-2 text-pink-500">const</span
-            ><span class="mr-2 text-white">coder</span
-            ><span class="mr-2 text-pink-500">=</span
-            ><span class="text-gray-400">&#123;</span>
+          Hello, <br />This is
+          <!-- -->
+          <span class="text-pink-500">{{ personalData.name }}</span> , I'm a
+          Professional
+          <span class="text-[#16f2b3]">{{ personalData.designation }}</span
+            >.
+          </h1>
+          <div class="my-12 flex items-center gap-5">
+            @for (item of personalData.socials; track item) {
+              <a
+                target="_blank"
+                class="transition-all text-pink-500 hover:scale-125 duration-300"
+                [href]="item.uri"
+                >
+                <i class="text-3xl" [class]="item.icon"></i
+                ></a>
+              }
+            </div>
+            <div class="flex items-center gap-3">
+              <a
+                class="bg-gradient-to-r to-pink-500 from-violet-600 p-[1px] rounded-full transition-all duration-300 hover:from-pink-500 hover:to-violet-600"
+                href="#contact"
+                ><button
+                class="px-3 text-xs md:px-8 py-3 md:py-4 bg-[#0d1224] rounded-full border-none text-center md:text-sm font-medium uppercase tracking-wider text-[#ffff] no-underline transition-all duration-200 ease-out md:font-semibold flex items-center gap-1 hover:gap-3"
+                >
+                <span>Contact me</span>
+                <i class="fa fa-address-book" aria-hidden="true"></i></button></a
+                ><a
+                class="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-3 md:px-8 py-3 md:py-4 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold"
+                role="button"
+                target="_blank"
+                [href]="personalData.resume"
+                ><span>Get Resume</span
+                ><i class="fa fa-download" aria-hidden="true"></i
+              ></a>
+            </div>
           </div>
-          <div>
-            <span class="ml-4 lg:ml-8 mr-2 text-white">name:</span
-            ><span class="text-gray-400">'</span
-            ><span class="text-amber-300">{{ personalData.name }}</span
-            ><span class="text-gray-400">',</span>
-          </div>
-          <div class="ml-4 lg:ml-8 mr-2">
-            <span class="text-white">skills:</span
-            ><span class="text-gray-400"> [</span>
+          <div
+            class="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]"
+            >
+            <app-code-preview>
+              <code class="font-mono text-xs md:text-sm lg:text-base"
+                ><div class="blink">
+                <span class="mr-2 text-pink-500">const</span
+                  ><span class="mr-2 text-white">coder</span
+                  ><span class="mr-2 text-pink-500">=</span
+                  ><span class="text-gray-400">&#123;</span>
+                </div>
+                <div>
+                  <span class="ml-4 lg:ml-8 mr-2 text-white">name:</span
+                    ><span class="text-gray-400">'</span
+                    ><span class="text-amber-300">{{ personalData.name }}</span
+                    ><span class="text-gray-400">',</span>
+                  </div>
+                  <div class="ml-4 lg:ml-8 mr-2">
+                    <span class="text-white">skills:</span
+                      ><span class="text-gray-400"> [</span>
 
-            <span *ngFor="let skill of skills; let last = last">
-              <span class="text-amber-300">
-                <span class="text-gray-400">'</span>{{ skill
-                }}<span class="text-gray-400">'</span></span
-              ><span *ngIf="!last" class="text-gray-400">, </span>
-            </span>
-            <span class="text-gray-400">],</span>
-          </div>
-          <div *ngFor="let field of booleanFields | keyvalue; let last = last">
-            <span class="ml-4 lg:ml-8 mr-2 text-white">{{ field.key }}:</span>
-            <span class="text-orange-400">{{ field.value }}</span>
-            <span class="text-gray-400">,</span>
-          </div>
+                      @for (skill of skills; track skill; let last = $last) {
+                        <span>
+                          <span class="text-amber-300">
+                            <span class="text-gray-400">'</span>{{ skill
+                            }}<span class="text-gray-400">'</span></span
+                            >@if (!last) {
+                            <span class="text-gray-400">, </span>
+                          }
+                        </span>
+                      }
+                      <span class="text-gray-400">],</span>
+                    </div>
+                    @for (field of booleanFields | keyvalue; track field; let last = $last) {
+                      <div>
+                        <span class="ml-4 lg:ml-8 mr-2 text-white">{{ field.key }}:</span>
+                        <span class="text-orange-400">{{ field.value }}</span>
+                        <span class="text-gray-400">,</span>
+                      </div>
+                    }
 
-          <!-- <div>
-            <span class="ml-4 lg:ml-8 mr-2 text-green-400">hireable:</span
-            ><span class="text-orange-400">function</span
-            ><span class="text-gray-400">() &#123;</span>
-          </div>
-          <div>
-            <span class="ml-8 lg:ml-16 mr-2 text-orange-400">return</span
-            ><span class="text-gray-400">(</span>
-          </div>
-          <div>
-            <span class="ml-12 lg:ml-24 text-cyan-400">this.</span
-            ><span class="mr-2 text-white">hardWorker</span
-            ><span class="text-amber-300">&amp;&amp;</span>
-          </div>
-          <div>
-            <span class="ml-12 lg:ml-24 text-cyan-400">this.</span
-            ><span class="mr-2 text-white">problemSolver</span
-            ><span class="text-amber-300">&amp;&amp;</span>
-          </div>
-          <div>
-            <span class="ml-12 lg:ml-24 text-cyan-400">this.</span
-            ><span class="mr-2 text-white">skills.length</span
-            ><span class="mr-2 text-amber-300">&gt;=</span
-            ><span class="text-orange-400">5</span>
-          </div>
-          <div><span class="ml-8 lg:ml-16 mr-2 text-gray-400">);</span></div>
-          <div><span class="ml-4 lg:ml-8 text-gray-400">&#125;;</span></div> -->
-          <div><span class="text-gray-400">&#125;;</span></div></code
-        >
-      </app-code-preview>
-    </div>
-  </div>
-</section>
+                    <!-- <div>
+                    <span class="ml-4 lg:ml-8 mr-2 text-green-400">hireable:</span
+                      ><span class="text-orange-400">function</span
+                      ><span class="text-gray-400">() &#123;</span>
+                    </div>
+                    <div>
+                      <span class="ml-8 lg:ml-16 mr-2 text-orange-400">return</span
+                        ><span class="text-gray-400">(</span>
+                      </div>
+                      <div>
+                        <span class="ml-12 lg:ml-24 text-cyan-400">this.</span
+                          ><span class="mr-2 text-white">hardWorker</span
+                          ><span class="text-amber-300">&amp;&amp;</span>
+                        </div>
+                        <div>
+                          <span class="ml-12 lg:ml-24 text-cyan-400">this.</span
+                            ><span class="mr-2 text-white">problemSolver</span
+                            ><span class="text-amber-300">&amp;&amp;</span>
+                          </div>
+                          <div>
+                            <span class="ml-12 lg:ml-24 text-cyan-400">this.</span
+                              ><span class="mr-2 text-white">skills.length</span
+                              ><span class="mr-2 text-amber-300">&gt;=</span
+                              ><span class="text-orange-400">5</span>
+                            </div>
+                            <div><span class="ml-8 lg:ml-16 mr-2 text-gray-400">);</span></div>
+                            <div><span class="ml-4 lg:ml-8 text-gray-400">&#125;;</span></div> -->
+                            <div><span class="text-gray-400">&#125;;</span></div></code
+                            >
+                          </app-code-preview>
+                        </div>
+                      </div>
+                    </section>

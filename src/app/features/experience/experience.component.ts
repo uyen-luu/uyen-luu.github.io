@@ -3,6 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
   OnInit,
+  inject,
 } from '@angular/core';
 import { GlowCard } from '@app/core/models';
 import { DataService } from '@app/core/services';
@@ -21,10 +22,9 @@ export function playerFactory() {
 export class ExperienceComponent implements OnInit {
   items!: GlowCard[];
   animationData = experience;
-  constructor(
-    private _dataService: DataService,
-    private _ref: ChangeDetectorRef
-  ) {}
+  private _dataService = inject(DataService);
+  private _ref = inject(ChangeDetectorRef);
+
   ngOnInit(): void {
     this._dataService.getExperiences().subscribe((res) => {
       this.items = res.map(
