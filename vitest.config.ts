@@ -1,10 +1,12 @@
 import { defineConfig } from 'vitest/config';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
+import angular from '@analogjs/vite-plugin-angular';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  plugins: [angular()],
   resolve: {
     alias: {
       '@app': resolve(__dirname, './src/app'),
