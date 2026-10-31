@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { PersonalData } from '@app/core/models';
 
 @Component({
@@ -10,10 +9,5 @@ import { PersonalData } from '@app/core/models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutComponent {
-  @Input() personal!: PersonalData;
-  private titleService = inject(Title);
-
-  constructor() {
-    this.titleService.setTitle('UL | About');
-  }
+  personal = input.required<PersonalData>();
 }

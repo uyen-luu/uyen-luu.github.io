@@ -1,17 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-not-found',
   imports: [],
   templateUrl: './not-found.component.html',
   styleUrl: './not-found.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NotFoundComponent {
-  private titleService = inject(Title);
-
-  constructor() {
-    this.titleService.setTitle('BC | NotFound')
-  }
-}
+export class NotFoundComponent {}

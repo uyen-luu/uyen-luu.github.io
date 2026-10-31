@@ -16,7 +16,8 @@
         >Skills
         <a
           class="cursor-pointer absolute ml-2 hover:text-[#16f2b3] hover:scale-110"
-          [routerLink]="['skills']"
+          routerLink="/skills"
+          aria-label="All skills"
           ><i class="fa-solid fa-arrow-up-right-from-square"></i></a></span
           ><span class="w-24 h-[2px] bg-[#1a1443]"></span>
         </div>
@@ -36,14 +37,13 @@
         style="
           --play: running;
           --direction: normal;
-          --duration: 46.0865234375s;
           --delay: 0s;
           --iteration-count: infinite;
           --min-width: 100%;
         "
-            [ngStyle]="{ '--duration': duration + 's' }"
+            [style.--duration]="duration() + 's'"
             >
-            @for (item of skills; track item) {
+            @for (item of skills(); track item.name) {
               <div
                 class="rfm-child"
                 style="--transform: none"

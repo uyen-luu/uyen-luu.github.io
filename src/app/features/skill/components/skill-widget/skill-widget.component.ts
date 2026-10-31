@@ -1,33 +1,23 @@
-import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
-  OnInit,
+  computed,
   inject,
 } from '@angular/core';
-import { Skill } from '@app/core/models';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { DataService } from '@app/core/services';
-import { SkillItemComponent } from "../skill-item/skill-item.component";
-import { RouterLinkWithHref } from "@angular/router";
+import { SkillItemComponent } from '../skill-item/skill-item.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-skill-widget',
-  imports: [CommonModule, SkillItemComponent, RouterLinkWithHref],
+  imports: [SkillItemComponent, RouterLink],
   templateUrl: './skill-widget.component.html',
   styleUrl: './skill-widget.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SkillWidgetComponent implements OnInit {
-  duration = 1;
-  private _dataService = inject(DataService);
-  private _ref = inject(ChangeDetectorRef);
-  skills: Skill[] = [];
-  ngOnInit(): void {
-    this._dataService.getSkills().subscribe((res) => {
-      this.skills = res;
-      this.duration = this.skills.length;
-      this._ref.markForCheck();
-    });
-  }
+export class SkillWidgetComponent {
+  skills = toSignal(inject(DataService).getSkills(), { initialValue: [] });
+  // One second per skill keeps the marquee speed constant as the list grows.
+  duration = computed(() => this.skills().length || 1);
 }

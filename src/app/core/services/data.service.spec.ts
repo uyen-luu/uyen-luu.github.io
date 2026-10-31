@@ -75,6 +75,14 @@ describe('DataService', () => {
     });
   });
 
+  it('requests shared files only once across subscribers', () => {
+    service.getPersonalData().subscribe();
+    service.getPersonalData().subscribe();
+    httpMock.expectOne('assets/data/personal.json').flush({});
+    service.getPersonalData().subscribe();
+    httpMock.expectNone('assets/data/personal.json');
+  });
+
   it('getEducations requests the correct endpoint', () => {
     service.getEducations().subscribe();
     httpMock.expectOne('assets/data/educations.json');

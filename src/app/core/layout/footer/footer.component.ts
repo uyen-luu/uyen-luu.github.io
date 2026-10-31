@@ -1,12 +1,5 @@
-
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  OnInit,
-  inject,
-} from '@angular/core';
-import { PersonalData } from '@app/core/models';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { DataService } from '@app/core/services';
 
 @Component({
@@ -16,17 +9,7 @@ import { DataService } from '@app/core/services';
   styleUrl: './footer.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FooterComponent implements OnInit {
-  currentYear!: string;
-  personal!: PersonalData;
-  private _dataService = inject(DataService);
-  private _ref = inject(ChangeDetectorRef);
-
-  ngOnInit(): void {
-    this.currentYear = new Date().getFullYear().toString();
-    this._dataService.getPersonalData().subscribe((res) => {
-      this.personal = res;
-      this._ref.markForCheck();
-    });
-  }
+export class FooterComponent {
+  currentYear = new Date().getFullYear();
+  personal = toSignal(inject(DataService).getPersonalData());
 }

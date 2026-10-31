@@ -9,12 +9,12 @@
     <div class="order-2 lg:order-1">
       <p class="font-medium mb-5 text-[#16f2b3] text-xl uppercase">Who I am?</p>
       <p class="text-gray-200 text-sm lg:text-lg">
-        {{ personal.description }}
+        {{ personal().description }}
       </p>
     </div>
     <div class="flex justify-center order-1 lg:order-2">
       <img
-        alt="Abu Said"
+        [alt]="personal().name"
         loading="lazy"
         width="280"
         height="280"
@@ -22,7 +22,7 @@
         data-nimg="1"
         class="rounded-lg transition-all duration-1000 grayscale hover:grayscale-0 hover:scale-110 cursor-pointer"
         style="color: transparent"
-        [src]="personal.profile"
+        [src]="personal().profile"
       />
     </div>
   </div>

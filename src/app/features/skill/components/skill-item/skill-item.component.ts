@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Skill } from '@app/core/models';
 
 @Component({
@@ -9,5 +9,5 @@ import { Skill } from '@app/core/models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SkillItemComponent {
-  @Input() item!: Skill;
+  item = input.required<Skill>();
 }

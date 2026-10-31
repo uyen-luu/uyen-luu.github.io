@@ -84,7 +84,7 @@
               </div>
             </div>
           </div>
-          @if (!!contact) {
+          @if (contact(); as contact) {
             <div class="lg:w-3/4">
               <div class="flex flex-col gap-5 lg:gap-9">
                 <p class="text-sm md:text-xl flex items-center gap-3">

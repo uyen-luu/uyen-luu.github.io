@@ -1,5 +1,4 @@
 export * from './card.model';
-export * from './tags';
 
 export interface Education {
   id: number;
@@ -57,19 +56,8 @@ export interface Project {
   blog: string;
 }
 
-export interface Contact {
-  email: string;
-  phone: string;
-  address: string;
-  github: string;
-  facebook: string;
-  linkedIn: string;
-  twitter: string;
-  stackOverflow: string;
-  devUsername: string;
-}
-
 export interface Skill {
   name: string;
   imagePath: string;
+  category: string;
 }

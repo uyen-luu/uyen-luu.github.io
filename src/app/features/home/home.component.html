@@ -1,8 +1,6 @@
-@if (!!personalData) {
+@if (personalData(); as personalData) {
   <app-bio [personalData]="personalData"></app-bio>
-  @if (!!personalData) {
-    <app-about [personal]="personalData"></app-about>
-  }
+  <app-about [personal]="personalData"></app-about>
 }
 
 <app-experience></app-experience>

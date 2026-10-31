@@ -1,10 +1,10 @@
-
 import {
-  AfterViewInit,
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
+  DestroyRef,
+  afterNextRender,
   inject,
+  signal,
 } from '@angular/core';
 
 @Component({
@@ -14,24 +14,26 @@ import {
   styleUrl: './scroll-to-top.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ScrollToTopComponent implements AfterViewInit {
-  isVisible = false;
+export class ScrollToTopComponent {
+  isVisible = signal(false);
   readonly SCROLL_THRESHOLD = 50;
   private scrollElement: HTMLElement | null = null;
-  private _ref = inject(ChangeDetectorRef);
-  ngAfterViewInit(): void {
-    this.scrollElement = document.getElementById('scrollContainer');
-    if (this.scrollElement) {
-      this.scrollElement.addEventListener('scroll', this.onScroll.bind(this));
-    }
-  }
 
-  onScroll(): void {
-    if (this.scrollElement) {
-      const scrollTop = this.scrollElement.scrollTop;
-      this.isVisible = scrollTop > this.SCROLL_THRESHOLD;
-      this._ref.markForCheck();
-    }
+  constructor() {
+    const destroyRef = inject(DestroyRef);
+    afterNextRender(() => {
+      const element = document.getElementById('scrollContainer');
+      if (!element) {
+        return;
+      }
+      this.scrollElement = element;
+      const onScroll = () =>
+        this.isVisible.set(element.scrollTop > this.SCROLL_THRESHOLD);
+      element.addEventListener('scroll', onScroll, { passive: true });
+      destroyRef.onDestroy(() =>
+        element.removeEventListener('scroll', onScroll)
+      );
+    });
   }
 
   scrollToTop(): void {
