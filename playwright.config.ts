@@ -18,7 +18,9 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: isCI,
   retries: isCI ? 1 : 0,
-  reporter: isCI ? [['github'], ['html', { open: 'never' }]] : [['list'], ['html', { open: 'never' }]],
+  reporter: isCI
+    ? [['github'], ['html', { open: 'never' }], ['./e2e/summary-reporter.ts']]
+    : [['list'], ['html', { open: 'never' }]],
   use: {
     baseURL: liveURL ?? `http://localhost:${localPort}`,
     trace: 'retain-on-failure',
