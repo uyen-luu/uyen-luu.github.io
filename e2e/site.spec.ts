@@ -71,6 +71,14 @@ test.describe('deep links', () => {
     await expect(page.locator('app-skill h2').first()).toBeVisible();
   });
 
+  for (const path of ['/home', '/about', '/portfolio', '/contact']) {
+    test(`old path ${path} redirects to the home page`, async ({ page }) => {
+      await page.goto(path);
+      await expect(page).toHaveURL(/\/$/);
+      await expect(bioHeading(page)).toBeVisible();
+    });
+  }
+
   test('unknown path shows the 404 page', { tag: '@smoke' }, async ({ page }) => {
     await page.goto('/this-page-does-not-exist');
     await expect(page).toHaveTitle('UL | Not Found');
