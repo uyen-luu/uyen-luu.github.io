@@ -2,10 +2,10 @@
   <div
     class="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl opacity-20"
   ></div>
-  <div class="flex justify-center -translate-y-[1px]">
+  <div class="flex justify-center -translate-y-px">
     <div class="w-3/4">
       <div
-        class="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent w-full"
+        class="h-px bg-linear-to-r from-transparent via-violet-500 to-transparent w-full"
       ></div>
     </div>
   </div>
@@ -16,7 +16,8 @@
         >Skills
         <a
           class="cursor-pointer absolute ml-2 hover:text-[#16f2b3] hover:scale-110"
-          [routerLink]="['skills']"
+          routerLink="/skills"
+          aria-label="All skills"
           ><i class="fa-solid fa-arrow-up-right-from-square"></i></a></span
           ><span class="w-24 h-[2px] bg-[#1a1443]"></span>
         </div>
@@ -36,14 +37,13 @@
         style="
           --play: running;
           --direction: normal;
-          --duration: 46.0865234375s;
           --delay: 0s;
           --iteration-count: infinite;
           --min-width: 100%;
         "
-            [ngStyle]="{ '--duration': duration + 's' }"
+            [style.--duration]="duration() + 's'"
             >
-            @for (item of skills; track item) {
+            @for (item of skills(); track item.name) {
               <div
                 class="rfm-child"
                 style="--transform: none"

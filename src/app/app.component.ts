@@ -18,6 +18,4 @@ import { ScrollToTopComponent } from './core/layout/scroll-to-top/scroll-to-top.
     ScrollToTopComponent,
   ],
 })
-export class AppComponent {
-  title = 'ul-portfolio';
-}
+export class AppComponent {}

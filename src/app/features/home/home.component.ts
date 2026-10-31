@@ -1,9 +1,8 @@
-
-import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { AboutComponent } from '../about/about.component';
 import { ExperienceComponent } from '../experience/experience.component';
 import { ProjectComponent } from '../project/project.component';
-import { PersonalData } from '@app/core/models';
 import { DataService } from '@app/core/services';
 import { BioComponent } from '../bio/bio.component';
 import { EducationComponent } from '../education/education.component';
@@ -21,19 +20,12 @@ import { SkillWidgetComponent } from '@app/features/skill/components';
     ProjectComponent,
     EducationComponent,
     ContactComponent,
-    CertificationComponent
-],
+    CertificationComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent implements OnInit {
-  personalData!: PersonalData;
-  private _dataService = inject(DataService);
-  
-  ngOnInit(): void {
-    this._dataService
-      .getPersonalData()
-      .subscribe((res) => (this.personalData = res));
-  }
+export class HomeComponent {
+  personalData = toSignal(inject(DataService).getPersonalData());
 }

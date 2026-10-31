@@ -26,7 +26,7 @@
             ],
             "thirdPartyServices": [
                 "Twilio",
-                "Sprite.NET",
+                "Stripe.NET",
                 "Quickbooks",
                 "Mailgun"
             ],
@@ -323,7 +323,7 @@
                 "Flutter"
             ],
             "thirdPartyServices": [
-                "Some API to streaming market prices (couldn't remember the name)"
+                "Real-time market price API"
             ]
         },
         "position": "FE Leader, BE supporter",

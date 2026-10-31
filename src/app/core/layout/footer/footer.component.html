@@ -7,12 +7,12 @@
         class="absolute top-0 h-[1px] w-1/2 bg-gradient-to-r from-transparent via-violet-500 to-transparent"
       ></div>
     </div>
-    @if (!!personal) {
+    @if (personal(); as personal) {
       <div
         class="flex flex-col md:flex-row items-center justify-between"
         >
         <p class="text-sm">
-          Copyright &copy; 2025
+          Copyright &copy; {{ currentYear }}
           <a
             target="_blank"
             class="text-[#16f2b3]"
@@ -21,7 +21,7 @@
             >. All rights reserved.
           </p>
           <div class="flex items-center gap-2 italic">
-            This stie is still in development<i
+            This site is still in development<i
             class="fa-solid fa-face-grin-beam-sweat"
           ></i>
         </div>

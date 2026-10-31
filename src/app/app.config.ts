@@ -4,14 +4,13 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient, withXhr } from '@angular/common/http';
 import { provideLottieOptions } from 'ngx-lottie';
-import player from 'lottie-web';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideHttpClient(withXhr()),
     provideLottieOptions({
-      player: () => player,
-    })
-  ]
+      player: () => import('lottie-web'),
+    }),
+  ],
 };

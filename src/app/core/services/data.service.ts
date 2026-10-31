@@ -1,8 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { map, Observable, shareReplay } from 'rxjs';
 import {
-  Contact,
   Education,
   Experience,
   GlowCard,
@@ -19,6 +18,25 @@ export class DataService {
   private basePath = 'assets/data/';
   private http = inject(HttpClient);
 
+  // Several components read the same files, so each request is made once and replayed.
+  private personalData$ = this.load<PersonalData>('personal.json');
+  private projects$ = this.http.get<Project[]>(`${this.basePath}projects.json`).pipe(
+    map((items) => {
+      items.forEach((item) => {
+        if (item.techStacks) {
+          item.techStacks.all = Object.entries(item.techStacks)
+            .filter(([key]) => key !== 'all') // Exclude "all" itself
+            .flatMap(([, value]) => (Array.isArray(value) ? value : []));
+        } else {
+          item.techStacks = new TechStacks({ all: [] });
+        }
+      });
+      return items;
+    }),
+    shareReplay(1)
+  );
+  private skills$ = this.load<Skill[]>('skills.json');
+
   getEducations(): Observable<Education[]> {
     return this.http.get<Education[]>(`${this.basePath}educations.json`);
   }
@@ -28,35 +46,22 @@ export class DataService {
   }
 
   getPersonalData(): Observable<PersonalData> {
-    return this.http.get<PersonalData>(`${this.basePath}personal.json`);
+    return this.personalData$;
   }
 
   getProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(`${this.basePath}projects.json`).pipe(
-      map((items) => {
-        items.forEach((item) => {
-          if (item.techStacks) {
-            item.techStacks.all = Object.entries(item.techStacks)
-              .filter(([key]) => key !== 'all') // Exclude "all" itself
-              .flatMap(([, value]) => (Array.isArray(value) ? value : []));
-          } else {
-            item.techStacks = new TechStacks({ all: [] });
-          }
-        });
-        return items;
-      })
-    );
-  }
-
-  getContact(): Observable<Contact> {
-    return this.http.get<Contact>(`${this.basePath}contact.json`);
+    return this.projects$;
   }
 
   getSkills(): Observable<Skill[]> {
-    return this.http.get<Skill[]>(`${this.basePath}skills.json`);
+    return this.skills$;
   }
 
   getCerts(): Observable<GlowCard[]> {
     return this.http.get<GlowCard[]>(`${this.basePath}cert.json`);
+  }
+
+  private load<T>(file: string): Observable<T> {
+    return this.http.get<T>(`${this.basePath}${file}`).pipe(shareReplay(1));
   }
 }

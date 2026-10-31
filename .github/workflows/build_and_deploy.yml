@@ -24,10 +24,23 @@ on:
       - src/**
       - package.json
       - package-lock.json
+      - angular.json
+      - tsconfig*.json
+      - eslint.config.js
+      - vitest.config.ts
+      - postcss.config.json
+      - playwright.config.ts
+      - e2e/**
       - .github/workflows/**
+      - .github/actions/**
+
+  # Daily check that the live site and its external links (resume, socials) still work.
+  schedule:
+    - cron: "0 2 * * *"
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  # Keep the scheduled check in its own group so it never cancels (or is cancelled by) a deploy.
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.event_name == 'schedule' && 'schedule' || 'build' }}
   cancel-in-progress: true
 
 env:
@@ -35,7 +48,9 @@ env:
 
 jobs:
   build:
-    if: github.event_name != 'workflow_dispatch' || github.event.inputs.trigger_build == 'true' # Runs if triggered manually or input is true
+    if: >
+      github.event_name != 'schedule' &&
+      (github.event_name != 'workflow_dispatch' || github.event.inputs.trigger_build == 'true')
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -68,6 +83,12 @@ jobs:
         id: build
         run: npm run build
 
+      # Lets verify-live wait until GitHub Pages actually serves this commit.
+      - name: Write build marker
+        run: |
+          sed -i 's|</head>|<meta name="build" content="${{ github.sha }}"></head>|' ${{ env.OUTPUT_PATH }}/index.html
+          grep -q '<meta name="build" content="${{ github.sha }}">' ${{ env.OUTPUT_PATH }}/index.html
+
       - name: Clone index.html to 404.html for Angular 17+
         id: copy
         run: |
@@ -76,19 +97,55 @@ jobs:
 
       - name: Upload build artifact
         id: deployment
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ${{ env.OUTPUT_PATH }}
 
+  # Runs the full e2e suite against the exact files that will be deployed (the Pages artifact).
+  verify:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Set up Playwright
+        uses: ./.github/actions/setup-playwright
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/pages
+
+      - name: Unpack build artifact
+        run: |
+          mkdir -p ${{ env.OUTPUT_PATH }}
+          tar -xf ${{ runner.temp }}/pages/artifact.tar -C ${{ env.OUTPUT_PATH }}
+
+      - name: Run e2e tests against the build
+        id: e2e
+        run: npm run e2e
+
+      - name: Upload Playwright report
+        if: failure() && steps.e2e.outcome == 'failure'
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-report-build
+          path: playwright-report/
+          retention-days: 14
+
   deploy:
     if: >
-      (github.event_name == 'workflow_dispatch' && github.event.inputs.trigger_deploy == 'true') ||
-      (github.ref == 'refs/heads/main')
+      github.event_name != 'schedule' &&
+      ((github.event_name == 'workflow_dispatch' && github.event.inputs.trigger_deploy == 'true') ||
+      (github.ref == 'refs/heads/main'))
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build # Ensures deploy happens only after the build
+    needs: [build, verify] # Deploy only a build that passed the e2e tests
 
     permissions:
       pages: write # to deploy to Pages
@@ -97,4 +154,36 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
+
+  verify-live:
+    # Runs after every successful deploy (so under the same conditions as deploy), and on the daily schedule.
+    # !cancelled() lets the scheduled run start even though build and deploy are skipped.
+    if: >
+      !cancelled() &&
+      (github.event_name == 'schedule' || needs.deploy.result == 'success')
+    runs-on: ubuntu-latest
+    needs: deploy
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Set up Playwright
+        uses: ./.github/actions/setup-playwright
+
+      - name: Run smoke tests against the live site
+        id: e2e
+        run: npm run e2e:live
+        env:
+          E2E_BASE_URL: https://uyen-luu.github.io
+          # Scheduled runs check whatever is live, so they don't wait for a specific build.
+          E2E_EXPECTED_SHA: ${{ github.event_name != 'schedule' && github.sha || '' }}
+
+      - name: Upload Playwright report
+        if: failure() && steps.e2e.outcome == 'failure'
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-report-live
+          path: playwright-report/
+          retention-days: 14

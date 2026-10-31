@@ -1,8 +1,9 @@
-@if (isVisible) {
+@if (isVisible()) {
   <button
-    class="scroll-to-top-btn cursor-pointer transition-all duration-300 hover:scale-110 cursor-pointer"
+    class="scroll-to-top-btn cursor-pointer transition-all duration-300 hover:scale-110"
+    aria-label="Scroll to top"
     (click)="scrollToTop()"
     >
-    <i class="fas fa-arrow-up"></i>
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
   </button>
 }
