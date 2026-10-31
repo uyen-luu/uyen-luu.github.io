@@ -240,7 +240,7 @@
         "category": "Cloud / Azure"
     },
     {
-        "name": "FormRec",
+        "name": "Document Intelligence",
         "imagePath": "assets/svg/skills/azure_form-recognizers.svg",
         "category": "Cloud / Azure"
     },
@@ -322,6 +322,106 @@
     {
         "name": "Svix",
         "imagePath": "assets/svg/skills/svix.svg",
+        "category": "Payment / Integration / APIs"
+    },
+    {
+        "name": "React",
+        "imagePath": "assets/svg/skills/react.svg",
+        "category": "Frontend / UI"
+    },
+    {
+        "name": "MudBlazor",
+        "imagePath": "assets/svg/skills/blazor.svg",
+        "category": "Frontend / UI"
+    },
+    {
+        "name": "SignalR",
+        "imagePath": "assets/svg/skills/dotnet.svg",
+        "category": "Backend / .NET"
+    },
+    {
+        "name": "CQRS",
+        "imagePath": "assets/svg/skills/dotnet.svg",
+        "category": "Backend / .NET"
+    },
+    {
+        "name": "Clean Architecture",
+        "imagePath": "assets/svg/skills/dotnet.svg",
+        "category": "Backend / .NET"
+    },
+    {
+        "name": "Container Apps",
+        "imagePath": "assets/svg/skills/azure.svg",
+        "category": "Cloud / Azure"
+    },
+    {
+        "name": "Bicep",
+        "imagePath": "assets/svg/skills/azure.svg",
+        "category": "Cloud / Azure"
+    },
+    {
+        "name": "Service Bus",
+        "imagePath": "assets/svg/skills/azure.svg",
+        "category": "Cloud / Azure"
+    },
+    {
+        "name": "Event Grid",
+        "imagePath": "assets/svg/skills/azure_event-grid.svg",
+        "category": "Cloud / Azure"
+    },
+    {
+        "name": "Managed Identity",
+        "imagePath": "assets/svg/skills/azure_active-directory.svg",
+        "category": "Cloud / Azure"
+    },
+    {
+        "name": "Private Endpoints",
+        "imagePath": "assets/svg/skills/azure_virtual-networks.svg",
+        "category": "Cloud / Azure"
+    },
+    {
+        "name": "MySQL",
+        "imagePath": "assets/svg/skills/mysql.svg",
+        "category": "Database / Storage"
+    },
+    {
+        "name": "xUnit",
+        "imagePath": "assets/svg/skills/dotnet.svg",
+        "category": "Version Control / CI-CD / Dev Tools"
+    },
+    {
+        "name": "Playwright",
+        "imagePath": "assets/svg/skills/microsoft.svg",
+        "category": "Version Control / CI-CD / Dev Tools"
+    },
+    {
+        "name": "Vitest",
+        "imagePath": "assets/svg/skills/vitejs.svg",
+        "category": "Version Control / CI-CD / Dev Tools"
+    },
+    {
+        "name": "OpenTelemetry",
+        "imagePath": "assets/svg/skills/azure_app-insights.svg",
+        "category": "Version Control / CI-CD / Dev Tools"
+    },
+    {
+        "name": "Mailchimp",
+        "imagePath": "assets/svg/skills/mailgun.svg",
+        "category": "Payment / Integration / APIs"
+    },
+    {
+        "name": "Microsoft Graph",
+        "imagePath": "assets/svg/skills/microsoft.svg",
+        "category": "Payment / Integration / APIs"
+    },
+    {
+        "name": "Google Maps",
+        "imagePath": "assets/svg/skills/google.svg",
+        "category": "Payment / Integration / APIs"
+    },
+    {
+        "name": "Firebase",
+        "imagePath": "assets/svg/skills/firebase.svg",
         "category": "Payment / Integration / APIs"
     }
 ]
